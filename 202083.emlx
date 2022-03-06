@@ -1,0 +1,1893 @@
+86089     
+Received: from 10.197.32.9
+ by atlas104.free.mail.bf1.yahoo.com with HTTPS; Fri, 29 Oct 2021 10:16:54 +0000
+Return-Path: <bounce@email.redbox.com>
+X-Originating-Ip: [172.82.222.10]
+Received-SPF: pass (domain of email.redbox.com designates 172.82.222.10 as permitted sender)
+Authentication-Results: atlas104.free.mail.bf1.yahoo.com;
+ dkim=pass header.i=@email.redbox.com header.s=redbox;
+ spf=pass smtp.mailfrom=email.redbox.com;
+ dmarc=pass(p=NONE) header.from=email.redbox.com;
+X-Apparently-To: jbyrnescu@yahoo.com; Fri, 29 Oct 2021 10:16:54 +0000
+X-YMailISG: 6h7zvA4WLDsA3HezGZgkY7_cJYgXTVnpNI3ZPlDHbF2QBD.C
+ MucHb.qJsc5xNwJ7W3f_W8Lpe89I1lKNTCuDbcc8m64oXJX4.FNV.keTs1Wf
+ HTsgOWGshmCYZWUSYAkvEWN5xvdxh0BuYb4kfnPwCXg9EW.vkJt.XoZ5xp1V
+ .9jw0IItev4hqOZdGsTZUUqMIq2izgc7w4p8dp_7haQz0sMgZOb7mvmUjMmt
+ Y4geZ4dVrWw.xxg6LYTgRi9r_pQdGNYahPJ0gh44u3qmEz3jPm38B8icB1.p
+ XOEsk1pkEFIV0NG_QU1pR..Ac7CXXykf9cdLUGqKupk8CYOGnjqvZRVNXcUw
+ tgBS2V8v0Dvxj.u9BTjVtCEQx9IcNM2WFmKbmT_TbKJXuzV8RndCJbYA6Yoq
+ qklcevUAmW.boHXIDi9ZdcTUojBbnm6pNHmVrOjEh4_M4GRTZXut8ToKPXZV
+ KQP0agY3xUYZn2VPp_wDheLS7IVXtklbI4U7qV9yDcv57gHgE6MZeKT7RHFV
+ emChBZ44Ix0GtAFBmjB3RP2wUQKDGdyzhBhFrWIBz0FGQnrysfvo_m4I86st
+ mDuGO_ALHzw5boY8tvZLUfGJh.ITAeUXtqb_nO5yUxI_yFsV0Oekwo2kUmb0
+ 2EeLrO3e07GzHcD1Xp2tGFGZu5EoAfaOQfQaXgGgg0guwnHcW13LxBWPsS17
+ J03WwmUr3yd3tVfT_joyIzYuFn8TAjPV0_aBTn8sHRAqvUW0.z0zCst9IDlU
+ 905qFBvwspIxO8Po8iKiHHQmIIEGJq4NL.36CwDUYkefNmCV8oEuj9s4lR9O
+ z8s87DaRrSVv_v_gtVgy63zFrdXYk8DllV6ROM9YalJX2uf_wVe2mNEYg2AG
+ eIn.rMJmwni2ko0ZzqTPeiIrB3qQYiRc9hiERWoHzNKtLDy6lh14Ulqow4WZ
+ 3_bSZXTw_Av9zDrl_2GVuqp3X.yOilkVihFvaHXETAsVhS68slVUTLRytuKN
+ xHMMYTpi4AsEi9Vv4folCGd_yzE6ruokWXz8nsIs5cYQ89yJXttnhV_UAShk
+ 4AcuGjgbDFq5I9oVmLsdiZFK.jtizTnVeg_9tICCkhalzL42VGcy50b9qHNE
+ GNVBMZIpOvl_f1jsX.vJOrgAQYW088D.aNxC4yav4iZHELSjZT1P9SFrnQLX
+ .6dWhmeaWTDyZiF5lrIBEC6sfQx5Li4l3hn.Vyi5wBPJFR7RBV90JVXYxheq
+ GEcqdGXfhmG92zrxmE5kzzmerFupSw--
+Received: from 172.82.222.10 (EHLO r10.email.redbox.com)
+ by 10.197.32.9 with SMTPs
+ (version=TLS1_2 cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256);
+ Fri, 29 Oct 2021 10:16:54 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=email.redbox.com;
+	s=redbox; t=1635502611;
+	bh=ogX7iTK6J0WzfPg4hUAXtSkd8y/9zlbGj5Ipf9d0koc=;
+	h=From:Subject:Date:To:MIME-Version:Message-ID:List-Unsubscribe:
+	 Content-Type;
+	b=CrXMRujdoD3ULltWpSpYTjx1BxYP/x+BARGjdREsDDfzwyHjEt4w4Co8TgezwaFOU
+	 AnYSgjLGpgbkOkUPTB8Rqxwx58FJ7RB1w3O76Eb9aF1QqBh8rH3AgQSsaWpt8k4P3c
+	 AqcHiRO6d0S0VBUxaB1TJqvfqbXFZf1HHeNQAGLvjKZoWkal06j8AmI7fFOCOlnJti
+	 pSuT0WzFqr6rgLNf/24v6/GR4gkmGub0K1Flt4X05xSKqlBh6lg34r6hN1Mj+0i/ST
+	 gLV7ikJZYFj9PDJrp9C4djntOJRpkusQE52/hLsoAof8cMlAfo/wyb7T/Zwh3VrWFb
+	 4Uz/02glkTnKw==
+X-MSFBL: 0JEmaFgN+DelzZuIWMX+9Hn1RKItEv/wwLn2VHNtU8Y=|eyJyIjoiamJ5cm5lc2N
+	1QHlhaG9vLmNvbSIsImciOiJkZWZhdWx0Xzg4ZjdjNmE0LTYxMGQtNGJiMi04YmN
+	iLTA0YmJiM2E2YmNlYyIsImIiOiJhd3NfcmVkYm94X3Byb2QxX2RlZmF1bHRfbW9
+	tZW50dW0yNF9tdGEwMTFfMTcyLjgyLjIyMi4xMCIsInJjcHRfbWV0YSI6eyAiaW4
+	iOiAicmVkYm94X21rdF9wcm9kMSIsICJyIjogImpieXJuZXNjdUB5YWhvby5jb20
+	iLCAibSI6ICIxOTQ2NjE3OTM3IiwgImQiOiAiMTgyNzg5MzY3IiwgImkiOiAiRjc
+	3MDMwMjU1MTJEMkMzMjBBNDkwRDQ0QEFkb2JlT3JnIiB9fQ==
+Received: from [35.164.58.169] ([35.164.58.169:38465] helo=r16.email.redbox.com)
+	by momentum24.or1.cpt.adobe.net (envelope-from <bounce@email.redbox.com>)
+	(ecelerity 4.2.38.62370 r(:)) with ESMTP
+	id 94/C9-12775-31ACB716; Fri, 29 Oct 2021 03:16:51 -0700
+From: "Redbox" <no-reply@email.redbox.com>
+Subject: =?utf-8?B?JDEuMjUgT2ZmIERlYWwgdy8gVGhlIFN1aWNpZGUgU3F1YWQgJg==?=
+ =?utf-8?B?IG1vcmUgbmV3IG1vdmllcyE=?=
+Date: Fri, 29 Oct 2021 03:16:50 -0700
+To: <jbyrnescu@yahoo.com>
+Reply-To: "Redbox" <Promo_AutoReply@redbox.com>
+MIME-Version: 1.0
+X-mailer: nlserver, Build 6.7.0
+Message-ID: <NM6740708510AE524F7redbox_mkt_prod1@email.redbox.com>
+List-Unsubscribe: <mailto:bounce@email.redbox.com?subject=unsubscribe%3CNM6740708510AE524F7redbox_mkt_prod1@email.redbox.com%3E>
+Content-Type: multipart/alternative;
+	charset="windows-1252";
+	boundary="----=_NextPart_922_8CED3F98.8CED3F98"
+Content-Length: 82072
+
+This is a multi-part message in MIME format.
+
+------=_NextPart_922_8CED3F98.8CED3F98
+Content-Type: text/plain;
+	charset="utf-8"
+Content-Transfer-Encoding: 8bit
+
+Plus: Don’t Breathe 2, Stillwater, Snake Eyes: G.I. Joe Origins & Free Guy! Download the Redbox app on your TV or devices and stream Free Movies & Free Live TV! 
+
+
+
+Can't see our images?   https://t.email.redbox.com/r/?id=t74070851,ae524f7,73519c8&cid=em:frs:10:29:2021&p1=%40U1A%2B8sQ%2BaBVKVAr56pO1TgMBn%2FkZSL91SzrzujaGiIo%3D Click here  | Welcome  John  
+  
+
+ https://t.email.redbox.com/r/?id=t74070851,ae524f7,73519d1&cid=em:frs:10:29:2021   
+ https://t.email.redbox.com/r/?id=t74070851,ae524f7,73519f4&cid=em:frs:10:29:2021 AT THE KIOSK   |    https://t.email.redbox.com/r/?id=t74070851,ae524f7,73519f5&cid=em:frs:10:29:2021 ON DEMAND   |    https://t.email.redbox.com/r/?id=t74070851,ae524f7,73519f6&cid=em:frs:10:29:2021 WATCH FREE
+
+ https://t.email.redbox.com/r/?id=t74070851,ae524f7,73519ce&cid=em:frs:10:29:2021   Member- 0 pts   
+  Get a FREE 1‌-‌night DVD rental with 1,500 points   
+  
+
+	
+NXPCP7YU	
+		
+	
+	
+	
+	
+	
+	
+ https://t.email.redbox.com/r/?id=t74070851,ae524f7,73519cf&cid=em:frs:10:29:2021 	
+
+	 https://t.email.redbox.com/r/?id=t74070851,ae524f7,7351a0b&cid=em:frs:10:29:2021&p1=email_FridaySpotlight_20211029&p2=FSL_10292021_Exclusion&p3=26352197788164&p4=1946617937 		 https://t.email.redbox.com/r/?id=t74070851,ae524f7,7351a0c&cid=em:frs:10:29:2021&p1=email_FridaySpotlight_20211029&p2=FSL_10292021_Exclusion&p3=26352197788164&p4=1946617937 		
+	
+	
+	
+
+	 https://t.email.redbox.com/r/?id=t74070851,ae524f7,73519f7&cid=em:frs:10:29:2021&p1=email_FridaySpotlight_20211029&p2=FSL_10292021_Exclusion&p3=26352197788164&p4=1946617937 		 https://t.email.redbox.com/r/?id=t74070851,ae524f7,73519f8&cid=em:frs:10:29:2021&p1=email_FridaySpotlight_20211029&p2=FSL_10292021_Exclusion&p3=26352197788164&p4=1946617937 		 https://t.email.redbox.com/r/?id=t74070851,ae524f7,73519f9&cid=em:frs:10:29:2021&p1=email_FridaySpotlight_20211029&p2=FSL_10292021_Exclusion&p3=26352197788164&p4=1946617937 		
+	
+
+	 https://t.email.redbox.com/r/?id=t74070851,ae524f7,7351a08&cid=em:frs:10:29:2021&p1=email_FridaySpotlight_20211029&p2=FSL_10292021_Exclusion&p3=26352197788164&p4=1946617937 		 https://t.email.redbox.com/r/?id=t74070851,ae524f7,7351a09&cid=em:frs:10:29:2021&p1=email_FridaySpotlight_20211029&p2=FSL_10292021_Exclusion&p3=26352197788164&p4=1946617937 		 https://t.email.redbox.com/r/?id=t74070851,ae524f7,7351a0a&cid=em:frs:10:29:2021&p1=email_FridaySpotlight_20211029&p2=FSL_10292021_Exclusion&p3=26352197788164&p4=1946617937 		
+	
+ https://t.email.redbox.com/r/?id=t74070851,ae524f7,73519c9&cid=em:frs:10:29:2021 	
+
+ https://t.email.redbox.com/r/?id=t74070851,ae524f7,73519ca&cid=em:frs:10:29:2021 MORE NEW RELEASES 	
+	
+	
+
+ https://t.email.redbox.com/r/?id=t74070851,ae524f7,7351a10&cid=em:frs:10:29:2021&p1=email_FridaySpotlight_20211029&p2=FSL_10292021_Exclusion&p3=26352197788164&p4=1946617937 	 https://t.email.redbox.com/r/?id=t74070851,ae524f7,7351a11&cid=em:frs:10:29:2021&p1=email_FridaySpotlight_20211029&p2=FSL_10292021_Exclusion&p3=26352197788164&p4=1946617937 	 https://t.email.redbox.com/r/?id=t74070851,ae524f7,7351a12&cid=em:frs:10:29:2021&p1=email_FridaySpotlight_20211029&p2=FSL_10292021_Exclusion&p3=26352197788164&p4=1946617937 	 https://t.email.redbox.com/r/?id=t74070851,ae524f7,7351a13&cid=em:frs:10:29:2021&p1=email_FridaySpotlight_20211029&p2=FSL_10292021_Exclusion&p3=26352197788164&p4=1946617937 	
+	
+
+ https://t.email.redbox.com/r/?id=t74070851,ae524f7,7351a14&cid=em:frs:10:29:2021 HALLOWEEN FAMILY FAVES 	
+	
+	
+
+ https://t.email.redbox.com/r/?id=t74070851,ae524f7,73519ff&cid=em:frs:10:29:2021&p1=email_FridaySpotlight_20211029&p2=FSL_10292021_Exclusion&p3=26352197788164&p4=1946617937 	 https://t.email.redbox.com/r/?id=t74070851,ae524f7,7351a00&cid=em:frs:10:29:2021&p1=email_FridaySpotlight_20211029&p2=FSL_10292021_Exclusion&p3=26352197788164&p4=1946617937 	 https://t.email.redbox.com/r/?id=t74070851,ae524f7,7351a01&cid=em:frs:10:29:2021&p1=email_FridaySpotlight_20211029&p2=FSL_10292021_Exclusion&p3=26352197788164&p4=1946617937 	 https://t.email.redbox.com/r/?id=t74070851,ae524f7,7351a02&cid=em:frs:10:29:2021&p1=email_FridaySpotlight_20211029&p2=FSL_10292021_Exclusion&p3=26352197788164&p4=1946617937 	
+	
+
+ https://t.email.redbox.com/r/?id=t74070851,ae524f7,73519fa&cid=em:frs:10:29:2021 RECOMMENDED FOR YOU 	
+	
+	
+
+ https://t.email.redbox.com/r/?id=t74070851,ae524f7,73519fb&cid=em:frs:10:29:2021&p1=email_FridaySpotlight_20211029&p2=FSL_10292021_Exclusion&p3=26352197788164&p4=1946617937 	 https://t.email.redbox.com/r/?id=t74070851,ae524f7,73519fc&cid=em:frs:10:29:2021&p1=email_FridaySpotlight_20211029&p2=FSL_10292021_Exclusion&p3=26352197788164&p4=1946617937 	 https://t.email.redbox.com/r/?id=t74070851,ae524f7,73519fd&cid=em:frs:10:29:2021&p1=email_FridaySpotlight_20211029&p2=FSL_10292021_Exclusion&p3=26352197788164&p4=1946617937 	 https://t.email.redbox.com/r/?id=t74070851,ae524f7,73519fe&cid=em:frs:10:29:2021&p1=email_FridaySpotlight_20211029&p2=FSL_10292021_Exclusion&p3=26352197788164&p4=1946617937 	
+	
+
+	
+
+ https://t.email.redbox.com/r/?id=t74070851,ae524f7,7351a0d&cid=em:frs:10:29:2021&p1=jbyrnescu@yahoo.com&p2=1946617937 	
+		
+ https://t.email.redbox.com/r/?id=t74070851,ae524f7,7351a0e&cid=em:frs:10:29:2021&p1=jbyrnescu@yahoo.com&p2=1946617937 	 https://t.email.redbox.com/r/?id=t74070851,ae524f7,7351a0f&cid=em:frs:10:29:2021&p1=jbyrnescu@yahoo.com&p2=1946617937 	
+	
+	
+	
+ https://t.email.redbox.com/r/?id=t74070851,ae524f7,73519d2&cid=em:frs:10:29:2021 	
+
+ https://t.email.redbox.com/r/?id=t74070851,ae524f7,73519dd&cid=em:frs:10:29:2021 	 https://t.email.redbox.com/r/?id=t74070851,ae524f7,73519de&cid=em:frs:10:29:2021 	 https://t.email.redbox.com/r/?id=t74070851,ae524f7,73519df&cid=em:frs:10:29:2021 	
+	
+ https://t.email.redbox.com/r/?id=t74070851,ae524f7,73519e0&cid=em:frs:10:29:2021&p1=26352197788164 	
+
+ https://t.email.redbox.com/r/?id=t74070851,ae524f7,73519e2&cid=em:frs:10:29:2021 	 https://t.email.redbox.com/r/?id=t74070851,ae524f7,73519e3&cid=em:frs:10:29:2021 	
+	
+
+ https://t.email.redbox.com/r/?id=t74070851,ae524f7,73519e4&cid=em:frs:10:29:2021 	 https://t.email.redbox.com/r/?id=t74070851,ae524f7,73519d0&cid=em:frs:10:29:2021 	
+	
+ https://t.email.redbox.com/r/?id=t74070851,ae524f7,7351a03&cid=em:frs:10:29:2021 	
+
+ https://t.email.redbox.com/r/?id=t74070851,ae524f7,7351a04&cid=em:frs:10:29:2021&p1=email_FridaySpotlight_20211029&p2=FSL_10292021_Exclusion&p3=26352197788164&p4=1946617937 	 https://t.email.redbox.com/r/?id=t74070851,ae524f7,7351a05&cid=em:frs:10:29:2021&p1=email_FridaySpotlight_20211029&p2=FSL_10292021_Exclusion&p3=26352197788164&p4=1946617937 	
+ https://t.email.redbox.com/r/?id=t74070851,ae524f7,7351a06&cid=em:frs:10:29:2021&p1=email_FridaySpotlight_20211029&p2=FSL_10292021_Exclusion&p3=26352197788164&p4=1946617937 	 https://t.email.redbox.com/r/?id=t74070851,ae524f7,7351a07&cid=em:frs:10:29:2021&p1=email_FridaySpotlight_20211029&p2=FSL_10292021_Exclusion&p3=26352197788164&p4=1946617937 	
+	
+
+	
+
+ https://t.email.redbox.com/r/?id=t74070851,ae524f7,73519d5&cid=em:frs:10:29:2021&p1=jbyrnescu@yahoo.com&p2=1946617937 	
+		
+ https://t.email.redbox.com/r/?id=t74070851,ae524f7,73519d6&cid=em:frs:10:29:2021&p1=jbyrnescu@yahoo.com&p2=1946617937 	 https://t.email.redbox.com/r/?id=t74070851,ae524f7,73519d7&cid=em:frs:10:29:2021&p1=jbyrnescu@yahoo.com&p2=1946617937 	
+	
+ https://t.email.redbox.com/r/?id=t74070851,ae524f7,73519d8&cid=em:frs:10:29:2021&p1=jbyrnescu@yahoo.com&p2=1946617937 	
+		
+ https://t.email.redbox.com/r/?id=t74070851,ae524f7,73519d9&cid=em:frs:10:29:2021&p1=jbyrnescu@yahoo.com&p2=1946617937 	 https://t.email.redbox.com/r/?id=t74070851,ae524f7,73519da&cid=em:frs:10:29:2021&p1=jbyrnescu@yahoo.com&p2=1946617937 	
+	
+	
+	
+	
+
+	
+ https://t.email.redbox.com/r/?id=t74070851,ae524f7,73519db&cid=em:frs:10:29:2021 	
+
+ https://t.email.redbox.com/r/?id=t74070851,ae524f7,73519dc&cid=em:frs:10:29:2021 BUY AT THE KIOSK 
+used movies for sale 	 https://t.email.redbox.com/r/?id=t74070851,ae524f7,73519d3&cid=em:frs:10:29:2021 JOIN TEXT CLUB! 2 
+text ALERTS to 727272 	 https://t.email.redbox.com/r/?id=t74070851,ae524f7,73519d4&cid=em:frs:10:29:2021 REDBOX UNSCRIPTED 
+news, insider reviews & more 	
+	
+	
+
+	
+
+ https://t.email.redbox.com/r/?id=t74070851,ae524f7,73519e5&cid=em:frs:10:29:2021 	  	 https://t.email.redbox.com/r/?id=t74070851,ae524f7,73519e6&cid=em:frs:10:29:2021 	  	 https://t.email.redbox.com/r/?id=t74070851,ae524f7,73519e7&cid=em:frs:10:29:2021 	  	 https://t.email.redbox.com/r/?id=t74070851,ae524f7,73519e8&cid=em:frs:10:29:2021 	  	 https://t.email.redbox.com/r/?id=t74070851,ae524f7,73519e9&cid=em:frs:10:29:2021 	
+	
+
+	
+HAVE QUESTIONS ABOUT REDBOX?   https://t.email.redbox.com/r/?id=t74070851,ae524f7,73519ea&cid=em:frs:10:29:2021 CONTACT US. 	
+
+ 1 Exp. 10‌/‌31‌/‌21 at 11‌:‌59‌:‌59pm CT. Valid for stated discount off the fee for a 1 day rental of an eligible disc or of an eligible Redbox On Demand rental transaction at $4.99 or more. 1 use, 1 code/per transaction. Your payment card, necessary for a rental, is charged the balance of the daily rental fee for a disc and the full daily rental fee for add’l discs + tax (except where tax isn’t charged) for the 1st rental day. You’re charged the full daily rental fee + tax for add’l days you keep each disc. Can’t be combined with other offers, prior rentals or redeemed for cash. May be cancelled‌/‌changed at any time. Void where prohibited. 
+
+ *Sale ends 11‌/‌1‌/‌2021. Plus applicable taxes. Available at select kiosks. Price and selection vary by location. 
+
+† Must activate offer prior to transaction. Requires active Redbox Perks Account and paid kiosk rental or transaction on Redbox On Demand of eligible titles between 10‌/‌15‌/‌21 – 11‌/‌1‌/‌21. Not appl. for purchases at the Kiosk. Offer valid for first rental night. Can’t be combined with other offers or prior rentals. Subject to terms at redbox.com/perks/terms 
+
+ The Redbox Perks Program is open to legal residents of the 50 U.S., D.C. or Puerto Rico, who are 18+. Requires Redbox Account. Void where prohibited by law. Points for rentals and purchases earned only for paid transactions. Points balance may be delayed up to seven days. Add'l purchase requirements, point limitations/expiration and reward restrictions apply. Subject to Program Terms & Conditions at  https://t.email.redbox.com/r/?id=t74070851,ae524f7,73519eb&cid=em:frs:10:29:2021 redbox.com/perks/terms  and Redbox Platform Terms of Use at  https://t.email.redbox.com/r/?id=t74070851,ae524f7,73519ec&cid=em:frs:10:29:2021 redbox.com/termsofuse . Information collected in the program is subject to the Redbox Privacy policy at  https://t.email.redbox.com/r/?id=t74070851,ae524f7,73519ed&cid=em:frs:10:29:2021 redbox.com/privacy . 
+
+ 2 You will receive recurring messages. Message and data rates may apply. Text STOP to cancel, HELP for help. By texting in you agree to get texts from Redbox at your mobile number, which may be sent through an automatic telephone dialing system. Consent not required to rent/buy from Redbox. Terms:  https://t.email.redbox.com/r/?id=t74070851,ae524f7,73519ee&cid=em:frs:10:29:2021 https://t.email.redbox.com/r/?id=t74070851,ae524f7,73519ef&cid=em:frs:10:29:2021  |  Privacy policy:  https://t.email.redbox.com/r/?id=t74070851,ae524f7,73519f0&cid=em:frs:10:29:2021 https://t.email.redbox.com/r/?id=t74070851,ae524f7,73519f1&cid=em:frs:10:29:2021 
+
+You have received this email as a registered user of the  https://t.email.redbox.com/r/?id=t74070851,ae524f7,73519f2&cid=em:frs:10:29:2021 redbox.com  email list. You are subscribed as  mailto:jbyrnescu@yahoo.com jbyrnescu@yahoo.com. If you do not wish to continue receiving these notices, please  https://t.email.redbox.com/r/?id=t74070851,ae524f7,73519f3&cid=em:frs:10:29:2021&p1=jbyrnescu%40yahoo.com unsubscribe . 
+
+Redbox Entertainment Inc. 
+1 Tower Lane, Suite 800 I Oakbrook Terrace, IL, 60181, USA 
+
+© 2021 Redbox Entertainment Inc.
+
+------=_NextPart_922_8CED3F98.8CED3F98
+Content-Type: text/html;
+	charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+
+<!doctype html>
+<html xmlns=3D"http://www.w3.org/1999/xhtml" xmlns:v=3D"urn:schemas-microso=
+ft-com:vml" xmlns:o=3D"urn:schemas-microsoft-com:office:office">
+<head>
+<script type=3D"application/ld+json">
+[{
+"@context": "http://schema.org/",
+"@type": "Organization",
+
+// If showing a logo, we recommend using an https URL.
+// It's not a requirement today, but may be in the future.
+"logo": "https://res.email.redbox.com/res/redbox_mkt_prod1/965fc235d4a8544d=
+94247bf7409732ca349db8ac85de4110b8bf2749bac818f7.jpg"
+},{
+"@context": "http://schema.org/",
+"@type": "EmailMessage",
+
+// Alternative subject line, coming soon.
+"subjectLine": ""
+},{
+"@context": "http://schema.org/",
+"@type": "DiscountOffer",
+
+// Describe your discount, this will be shown as a badge (eg ""25% off"" or=
+ ""free shipping"")
+"description": "$1.25 Off A Movie Night",
+
+"discountCode": " NXPCP7YU ",
+
+"availabilityStarts": "2021-10-29T08:00:00-07:00",
+
+"availabilityEnds": "2021-10-31T23:59:59-07:00"
+},{
+// Promotion card with single image.
+// We recommend using an https URL.  It's not a requirement today, but may =
+be in the future.
+// Any image size will work and will just be cropped automatically.
+// GIF & WEBP images are not supported and will be filtered out.
+// Sample image is 538x138, 3.9 aspect ratio
+"@context": "http://schema.org/",
+"@type": "PromotionCard",
+"image": "https://res.email.redbox.com/res/redbox_mkt_prod1/d054730db838dad=
+373ebe72500b4ddc5.jpg"
+}]
+
+</script>
+<meta name=3D"x-apple-disable-message-reformatting">
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8">
+<!--[if !mso]><!-->
+<meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge" />
+<!--<![endif]-->
+<meta name=3D"viewport" content=3D"width=3Ddevice-width,initial-scale=3D1.0=
+">
+<meta name=3D"format-detection" content=3D"telephone=3Dno">
+<title>$1.25 Off Deal w/ The Suicide Squad & more new movies!</title>
+<!--[if mso]>
+<style type=3D"text/css">
+body, table, td, .mobile-text {
+font-family:Arial, Helvetica, sans-serif !important;
+}
+</style>
+<xml>
+<o:OfficeDocumentSettings>
+<o:AllowPNG/>
+<o:PixelsPerInch>96</o:PixelsPerInch>
+</o:OfficeDocumentSettings>
+</xml>
+<![endif]-->
+<style type=3D"text/css">
+span.MsoHyperlink {
+mso-style-priority: 99;
+color: inherit;
+}
+span.MsoHyperlinkFollowed {
+mso-style-priority: 99;
+color: inherit;
+}
+@import url("https://use.typekit.net/onr8tbr.css");
+=2EReadMsgBody {
+width: 100%;
+}
+=2EExternalClass {
+width: 100%;
+}
+table {
+border-collapse: collapse;
+margin: 0 auto;
+}
+=2EappleLinks a {
+color: #666666;
+text-decoration: none;
+}
+=2EappleLinksFooter a {
+color: #a1a1a1;
+text-decoration: none;
+}
+=2Emobile {
+border-spacing: 0;
+display: none!important;
+height: 0;
+max-height: 0;
+mso-hide: all;
+overflow: hidden;
+visibility: hidden;
+width: 0;
+}
+@media only screen and (max-width:480px) {
+td[class=3D"web"],
+table[class=3D"web"],
+div[class=3D"web"],
+br[class=3D"web"],
+span[class=3D"web"] {
+display: none !important;
+}
+=2Emobile,
+td[class=3D"mobile"],
+table[class=3D"mobile"],
+img[class=3D"mobile"],
+div[class=3D"mobile"],
+tr[class=3D"mobile"] {
+display: block !important;
+width: auto !important;
+overflow: visible !important;
+height: auto !important;
+max-height: inherit !important;
+font-size: 15px !important;
+line-height: 21px !important;
+visibility: visible !important;
+}
+table[class=3D"email-width"] {
+width: 90% !important;
+}
+td[class=3D"full-width"],
+table[class=3D"full-width"] {
+width: 100% !important;
+}
+table[class=3D"content-width"],
+td[class=3D"content-width"] {
+display: block !important;
+width: 100% !important;
+}
+table[class=3D"footer-content"],
+td[class=3D"footer-content"] {
+clear: both !important;
+display: block !important;
+width: auto !important;
+}
+td[class=3D"mobile-spacer"],
+table[class=3D"mobile-spacer"] {
+width: 18px !important;
+}
+img[class=3D"mobile-image"] {
+display: inline-block !important;
+height: auto !important;
+max-height: inherit !important;
+overflow: visible !important;
+visibility: visible !important;
+width: 100% !important;
+}
+a[class=3D"button"] {
+background-color: #2b9af3 !important;
+border-radius: 16px !important;
+color: #380a46 !important;
+display: inline-block !important;
+font-weight: bold !important;
+text-align: center !important;
+text-decoration: none !important;
+-webkit-text-size-adjust: none !important;
+font-size: 16px !important;
+line-height: 20px !important;
+width: 100% !important;
+margin-top: 12px !important;
+padding-top: 7px !important;
+padding-bottom: 7px !important;
+}
+=2Eheader,
+div[class=3D"header"] {
+font-size: 16px !important;
+line-height: 22px !important;
+}
+=2Eheadline,
+div[class=3D"headline"] {
+font-size: 26px !important;
+line-height: 28px !important;
+}
+td[class=3D"mobile-text"],
+table[class=3D"mobile-text"] {
+font-size: 15px !important;
+line-height: 21px !important;
+}
+td[class=3D"txt-lg"] {
+font-size: 17px !important;
+line-height: 21px !important;
+}
+td[class=3D"txt-ctr"] {
+text-align: center !important;
+}
+img[class=3D"social"] {
+height: 28px !important;
+width: 28px !important;
+}
+td[class=3D"social-spacer"] {
+width: 15px !important;
+}
+td[class=3D"icon-cell"] {
+padding-top: 29px !important;
+padding-bottom: 0px !important;
+}
+=2Ehide {
+display: none !important;
+}
+=2Eshow {
+display: block !important;
+margin: 0;
+padding: 0;
+overflow: visible !important;
+width: auto !important;
+max-height: inherit !important;
+float: none !important;
+}
+}
+</style>
+</head>
+<body bgcolor=3D"#2f1e36" style=3D"background-color:#2f1e36; margin:0; padd=
+ing:0;-webkit-font-smoothing:antialiased;width:100% !important;-webkit-text=
+-size-adjust:none;" topmargin=3D"0">
+<div style=3D"font-size:1px; color:#333333; display:none; overflow:hidden; =
+visibility:hidden;">Plus: Don=E2=80=99t Breathe 2, Stillwater, Snake Eyes: =
+G.I. Joe Origins &amp; Free Guy! Download
+the Redbox app on your TV or devices and stream Free Movies &amp; Free Live=
+ TV!
+</div>
+<!--main table-->
+<table align=3D"center" width=3D"600" bgcolor=3D"#2f1e36" style=3D"backgrou=
+nd-color:#2f1e36;" border=3D"0" cellpadding=3D"0" cellspacing=3D"0">
+<tr>
+<td>
+<table class=3D"email-width" align=3D"center" width=3D"600" border=3D"0" ce=
+llpadding=3D"0" cellspacing=3D"0">
+<tbody>
+<!--banner-->
+<tr>
+<td>
+<table class=3D"full-width" align=3D"center" width=3D"600" border=3D"0" cel=
+lpadding=3D"0" cellspacing=3D"0" bgcolor=3D"#060208" style=3D"background-co=
+lor:#060208; width:600px;">
+<tbody>
+
+<!-- =3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D
+< Header >
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D -->
+
+<!-- < Webview > -->    
+
+  <tr>
+<td>
+<table class=3D"full-width" align=3D"center" width=3D"600" border=3D"0" cel=
+lpadding=3D"0" cellspacing=3D"0" bgcolor=3D"#2f1e36" style=3D"background-co=
+lor:#2f1e36; width:600px;">
+<tr>
+<td valign=3D"bottom" style=3D"color:#ffffff;font-family:Arial, Helvetica, =
+sans-serif;font-size:11px;font-style:normal;line-height:14px; vertical-alig=
+n: middle;padding-right:10px;padding:5px;" align=3D"right" bgcolor=3D"#2f1e=
+36">Can't&nbsp;see&nbsp;our&nbsp;images=3F&nbsp;<a href=3D"https://t.email.=
+redbox.com/r/=3Fid=3Dh74070851,ae524f7,735197e&cid=3Dem:frs:10:29:2021&p1=
+=3D%40U1A%2B8sQ%2BaBVKVAr56pO1TgMBn%2FkZSL91SzrzujaGiIo%3D" style=3D"text-d=
+ecoration: none; color:#ffffff;" _type=3D"mirrorPage">Click&nbsp;here</a> |=
+ <strong>Welcome&nbsp;John</strong></td>
+</tr>
+</table>
+</td>
+</tr>
+<!-- </ Webview > -->
+<tr>
+<td class=3D"one-column">
+
+<!--[if gte mso 9]>
+<v:rect xmlns:v=3D"urn:schemas-microsoft-com:vml" fill=3D"true" stroke=3D"f=
+alse" style=3D"width:600px;">
+<v:fill src=3D"https://res.email.redbox.com/res/redbox_mkt_prod1/3a62665d54=
+622d587e0d4b60d6936f07.png" type=3D"frame" />
+<v:textbox inset=3D"0px, 0px, 0px, 0px;" style=3D"mso-fit-shape-to-text:tru=
+e">
+<div><div style=3D"font-size:0;line-height: 0;">
+<![endif]-->
+<table background=3D"https://res.email.redbox.com/res/redbox_mkt_prod1/3a62=
+665d54622d587e0d4b60d6936f07.png" border=3D"0" cellpadding=3D"0" cellspacin=
+g=3D"0" width=3D"600" style=3D"width:600px;"><tr>
+  
+  
+  <td class=3D"inner" align=3D"left" style=3D"width:250px;padding-left: 10p=
+x;padding-top:10px;padding-bottom:10px;" width=3D"250" >
+        <a href=3D"https://t.email.redbox.com/r/=3Fid=3Dh74070851,ae524f7,7=
+35197d&cid=3Dem:frs:10:29:2021" target=3D"_blank"><img src=3D"https://res.e=
+mail.redbox.com/res/redbox_mkt_prod1/6680c04e9e8c8cf502de95b7bcbc7c9a.png" =
+width=3D"120" alt=3D"redbox" style=3D"border: 0; color: #ffffff; display: i=
+nline-block; font-size: 28px; Margin: 0 auto;" /></a>
+    </td>
+  
+  
+  <td class=3D"logo" align=3D"right" style=3D"text-align: right;color: #fff=
+fff; font-family:  Arial, sans-serif; font-size: 14px; font-weight: bold; m=
+so-line-height-rule: exactly; Margin: 0; padding: 0; -webkit-font-smoothing=
+: antialiased;">
+    
+    <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"350"><=
+tr><td class=3D"logo" style=3D"text-align: center;color: #ffffff; font-fami=
+ly:  Arial, sans-serif; font-size: 13px; font-weight: bold;mso-line-height-=
+rule: exactly; Margin: 0;-webkit-font-smoothing: antialiased;padding: 0 8px=
+;" width=3D"160"><a href=3D"https://t.email.redbox.com/r/=3Fid=3Dh74070851,=
+ae524f7,73519c7&cid=3Dem:frs:10:29:2021" style=3D"text-decoration: none;col=
+or:#ffffff;">AT THE KIOSK</a></td>
+    <td align=3D"center" style=3D"text-align: center;color: #ffffff; font-f=
+amily:  Arial, sans-serif; font-size: 14px; font-weight: bold;mso-line-heig=
+ht-rule: exactly; Margin: 0;-webkit-font-smoothing: antialiased;" width=3D"=
+10">|</td>
+    <td class=3D"logo" style=3D"text-align: center;color: #ffffff; font-fam=
+ily:  Arial, sans-serif; font-size: 13px; font-weight: bold; mso-line-heigh=
+t-rule: exactly; Margin: 0; -webkit-font-smoothing: antialiased;padding:0 8=
+px;" width=3D"130">
+                                                <a href=3D"https://t.email.=
+redbox.com/r/=3Fid=3Dh74070851,ae524f7,73519a9&cid=3Dem:frs:10:29:2021" sty=
+le=3D"text-decoration: none;color:#ffffff;">ON DEMAND</a>
+              </td>
+    <td align=3D"center" style=3D"text-align: center;color: #ffffff; font-f=
+amily:  Arial, sans-serif; font-size: 14px; font-weight: bold;mso-line-heig=
+ht-rule: exactly; Margin: 0;-webkit-font-smoothing: antialiased;" width=3D"=
+10">|</td>
+       <td class=3D"logo" style=3D"text-align: center;color: #ffffff; font-=
+family:  Arial, sans-serif; font-size: 13px; font-weight: bold; mso-line-he=
+ight-rule: exactly; Margin: 0; -webkit-font-smoothing: antialiased;padding:=
+0 8px;" width=3D"140">
+                                                <a href=3D"https://t.email.=
+redbox.com/r/=3Fid=3Dh74070851,ae524f7,73519aa&cid=3Dem:frs:10:29:2021" sty=
+le=3D"text-decoration: none;color:#ffffff;">WATCH FREE</a>
+                                            </td>
+    
+    </tr></table>
+                                                
+                                            </td>
+  
+  </tr></table><!--[if gte mso 9]>
+</div></div>
+</v:textbox>
+</v:rect>
+<![endif]-->
+</td>
+</tr>
+
+<tr>
+<td>
+<table class=3D"full-width" align=3D"center" width=3D"600" border=3D"0" cel=
+lpadding=3D"0" cellspacing=3D"0" bgcolor=3D"#ebebeb" style=3D"background-co=
+lor:#ebebeb; width:600px;">
+<tbody>
+<tr>
+<td align=3D"left">
+<table bgcolor=3D"#ebebeb" width=3D"100%" border=3D"0" cellspacing=3D"0" ce=
+llpadding=3D"0" style=3D"background-color: #ebebeb;">
+<tbody>
+<tr>
+<td align=3D"left" width=3D"40" valign=3D"top" style=3D"padding-left:10px;"=
+>
+<a href=3D"https://t.email.redbox.com/r/=3Fid=3Dh74070851,ae524f7,73519ae&c=
+id=3Dem:frs:10:29:2021"><img src=3D"https://res.email.redbox.com/res/img/B2=
+E2CE0D630804CA81886FD2E271F1EB.png" width=3D"30" class=3D"hauto" style=3D"d=
+isplay: block;" height=3D"auto" alt=3D"member" title=3D"" /></a></td> 
+<td align=3D"left" valign=3D"middle" style=3D"color:#380a45;font-family:Ari=
+al, Helvetica, sans-serif;font-size:14px;font-style:normal; font-weight: 70=
+0;line-height:18px;">Member - 0&nbsp;pts</td>
+</tr>
+</tbody>
+</table>
+</td>
+<td valign=3D"middle" align=3D"right" style=3D"color:#380a45 !important;fon=
+t-family:Arial, Helvetica, sans-serif;font-size:11px;font-style:normal;line=
+-height:14px;font-weight: bold;padding-right:10px;">
+
+Get a FREE 1&zwnj;-&zwnj;night DVD rental with 1,500 points
+
+
+
+</td>          
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+
+<tr>
+<td valign=3D"top" align=3D"center">
+<table align=3D"center" width=3D"600" border=3D"0" cellspacing=3D"0" cellpa=
+dding=3D"0" style=3D"width: 600px;">
+<tbody>
+<tr>
+<td align=3D"center" bgcolor=3D"#2f1e36" valign=3D"top">
+<table width=3D"600" bgcolor=3D"#2f1e36" border=3D"0" cellspacing=3D"0" cel=
+lpadding=3D"0" style=3D"width: 600px;">
+<tbody>
+<tr>
+<td valign=3D"top" background=3D"https://res.email.redbox.com/res/redbox_mk=
+t_prod1/fe94b75fb463523a63cb015069aff5e3.jpg" align=3D"center" bgcolor=3D"#=
+ffffff" width=3D"600" height=3D"100" style=3D"width: 600px; background-imag=
+e:url(https://res.email.redbox.com/res/redbox_mkt_prod1/fe94b75fb463523a63c=
+b015069aff5e3.jpg);vertical-align: top;background-position: center center;b=
+ackground-repeat: no-repeat;background-size: cover;background-color: #2f1e3=
+6;">
+<!--[if gte mso 9]>
+<v:rect xmlns:v=3D"urn:schemas-microsoft-com:vml" fill=3D"true" stroke=3D"f=
+alse" style=3D"width:600px; height:100px;">
+<v:fill type=3D"frame" src=3D"https://res.email.redbox.com/res/redbox_mkt_p=
+rod1/fe94b75fb463523a63cb015069aff5e3.jpg" color=3D"#ec3e2a" />
+<v:textbox inset=3D"0,0,0,0">
+<![endif]-->
+<table align=3D"center" width=3D"600" border=3D"0" cellspacing=3D"0" cellpa=
+dding=3D"0" style=3D"width: 600px; vertical-align: top;">
+<tbody>
+<tr>
+<td align=3D"center" valign=3D"top" style=3D"padding-top: 23px;">
+<table border=3D"0" width=3D"600" align=3D"center" cellspacing=3D"0" cellpa=
+dding=3D"0" style=3D"height: 36px; width: 600px;">
+<tbody>
+<tr>
+<td align=3D"center" valign=3D"top" width=3D"419" style=3D"width: 419px;" b=
+gcolor=3D""></td>
+<td align=3D"center" width=3D"160"  valign=3D"middle">
+<table width=3D"160"  border=3D"0" cellspacing=3D"0" cellpadding=3D"0" styl=
+e=3D"width: 160px; height: 36px;">
+<tbody>
+<tr>
+<td align=3D"center" valign=3D"middle" style=3D"font-family:Arial, Helvetic=
+a, sans-serif; color:#ec3e2a; font-size:23px; line-height: 27px; font-weigh=
+t: bold; height: 36px;"><span style=3D"color:#ec3e2a !important;">NXPCP7YU<=
+/span></td>
+</tr>
+</tbody>
+</table>
+</td>
+<td align=3D"center" valign=3D"top" width=3D"21" style=3D"width: 21px;"></t=
+d>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<!--[if gte mso 9]>
+</v:textbox>
+</v:rect>
+<![endif]-->
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+
+
+
+
+  
+</tbody>
+</table>
+</td>
+</tr>
+<tr align=3D"center">
+<td height=3D"10" bgcolor=3D"#060208"></td>
+</tr>
+<tr>
+<td bgcolor=3D"#060208" style=3D"background-color: #060208;"><a href=3D"htt=
+ps://t.email.redbox.com/r/=3Fid=3Dh74070851,ae524f7,73519af&cid=3Dem:frs:10=
+:29:2021" target=3D"_blank"><img src=3D"https://res.email.redbox.com/res/im=
+g/8B58E9EB1F74E62DBD14F63AAEBFFA10.jpg" alt=3D"DEVICE LINEUP" width=3D"600"=
+ height=3D"auto" border=3D"0" hspace=3D"0" vspace=3D"0" style=3D"color:#380=
+a46; font-family:Arial, Helvetica, sans-serif; font-size:20px; line-height:=
+24px; display:block; vertical-align:top;"></a>
+</td>
+</tr>
+<tr>
+<td align=3D"center" bgcolor=3D"#000000" valign=3D"top">
+<table width=3D"600" bgcolor=3D"#000000" border=3D"0" cellspacing=3D"0" cel=
+lpadding=3D"0" style=3D"width: 600px;">
+<tbody>
+<tr>
+<td valign=3D"top" background=3D"https://res.email.redbox.com/res/redbox_mk=
+t_prod1/cfa452d0caa163cf2116c5a1abcba1a7.jpg" align=3D"center" bgcolor=3D"#=
+000000" width=3D"600" height=3D"487" style=3D"width: 600px; background-imag=
+e:url(https://res.email.redbox.com/res/redbox_mkt_prod1/cfa452d0caa163cf211=
+6c5a1abcba1a7.jpg);vertical-align: top;background-position: center center;b=
+ackground-repeat: no-repeat;background-size: cover;background-color: #00000=
+0;">
+<!--[if gte mso 9]>
+<v:rect xmlns:v=3D"urn:schemas-microsoft-com:vml" fill=3D"true" stroke=3D"f=
+alse" style=3D"width:600px; height:487px;">
+<v:fill type=3D"frame" src=3D"https://res.email.redbox.com/res/redbox_mkt_p=
+rod1/cfa452d0caa163cf2116c5a1abcba1a7.jpg" color=3D"#000000" />
+<v:textbox inset=3D"0,0,0,0">
+<![endif]-->
+<table align=3D"center" width=3D"600" border=3D"0" cellspacing=3D"0" cellpa=
+dding=3D"0" style=3D"width: 600px; vertical-align: top;">
+<tbody>
+<tr>
+<td align=3D"center" valign=3D"top" style=3D"padding-top:80px; padding-bott=
+om: 35px;">
+<table border=3D"0" width=3D"600" align=3D"center" cellspacing=3D"0" cellpa=
+dding=3D"0" style=3D"width: 600px;">
+<tbody>
+<tr>
+<td align=3D"center" valign=3D"top" width=3D"45" style=3D"width:45px;"></td=
+>
+<td align=3D"center" style=3D"background-color:#060208;">
+<a href=3D"https://t.email.redbox.com/r/=3Fid=3Dh74070851,ae524f7,7351981&c=
+id=3Dem:frs:10:29:2021&p1=3Demail_FridaySpotlight_20211029&p2=3DFSL_1029202=
+1_Exclusion&p3=3D26352197788164&p4=3D1946617937" target=3D"_blank" _label=
+=3D"D;R:1,I:1"><img src=3D"https://reels.product.prod.redbox.com/products/r=
+eels/email/content=3Ftype=3DImage&d=3DDesktop&coll_id=3Demail_FridaySpotlig=
+ht_20211029&exclusion=3DFSL_10292021_Exclusion&uid=3D26352197788164&cid=3De=
+m:frs:10:29:2021&et_rid=3D1946617937&items=3D4&rp=3D1&ip=3D1" alt=3D"" widt=
+h=3D"248"  height=3D"auto" style=3D"display: block; width: 100%; max-width:=
+ 100%; height: auto;" border=3D"0"/>
+</a>
+</td>
+<td align=3D"center" valign=3D"top" width=3D"14" style=3D"width: 14px;"></t=
+d>
+<td align=3D"center" style=3D"background-color:#060208;">
+<a href=3D"https://t.email.redbox.com/r/=3Fid=3Dh74070851,ae524f7,7351982&c=
+id=3Dem:frs:10:29:2021&p1=3Demail_FridaySpotlight_20211029&p2=3DFSL_1029202=
+1_Exclusion&p3=3D26352197788164&p4=3D1946617937" target=3D"_blank" _label=
+=3D"D;R:1,I:2"><img src=3D"https://reels.product.prod.redbox.com/products/r=
+eels/email/content=3Ftype=3DImage&d=3DDesktop&coll_id=3Demail_FridaySpotlig=
+ht_20211029&exclusion=3DFSL_10292021_Exclusion&uid=3D26352197788164&cid=3De=
+m:frs:10:29:2021&et_rid=3D1946617937&items=3D4&rp=3D1&ip=3D2" alt=3D"" widt=
+h=3D"248"  height=3D"auto" style=3D"display: block; width: 100%; max-width:=
+ 100%; height: auto;" border=3D"0"/>
+</a>
+</td>
+<td align=3D"center" valign=3D"top" width=3D"45" style=3D"width: 45px;"></t=
+d>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<!--[if gte mso 9]>
+</v:textbox>
+</v:rect>
+<![endif]-->
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+<td width=3D"600" bgcolor=3D"#060208" cellspacing=3D"0" cellpadding=3D"0" s=
+tyle=3D"font-size: 0; padding-bottom: 14px;">
+<!--[if (gte mso 9)|(IE)]>
+<table align=3D"center" bgcolor=3D"#060208" border=3D"0" cellspacing=3D"0" =
+cellpadding=3D"0" width=3D"600">
+<tr>
+<td align=3D"center" bgcolor=3D"#060208" valign=3D"top" width=3D"600">
+<![endif]-->
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"600" bgcol=
+or=3D"#060208" style=3D"background-color:#060208;max-width: 600px; border-c=
+ollapse:collapse; border-spacing: 0;" align=3D"center">
+<tbody>
+<tr>
+<td align=3D"center" valign=3D"top" width=3D"14.25" style=3D"width: 14.25px=
+;"></td>
+<td align=3D"center" style=3D"background-color:#060208;">
+<!-- left side image -->
+<a href=3D"https://t.email.redbox.com/r/=3Fid=3Dh74070851,ae524f7,7351993&c=
+id=3Dem:frs:10:29:2021&p1=3Demail_FridaySpotlight_20211029&p2=3DFSL_1029202=
+1_Exclusion&p3=3D26352197788164&p4=3D1946617937" target=3D"_blank" _label=
+=3D"D;R:2,I:1"><img src=3D"https://reels.product.prod.redbox.com/products/r=
+eels/email/content=3Ftype=3DImage&d=3DDesktop&coll_id=3Demail_FridaySpotlig=
+ht_20211029&exclusion=3DFSL_10292021_Exclusion&uid=3D26352197788164&cid=3De=
+m:frs:10:29:2021&et_rid=3D1946617937&items=3D4&rp=3D2&ip=3D1" alt=3D"" widt=
+h=3D"181" height=3D"auto"  border=3D"0" style=3D"display: block; width: 100=
+%; max-width: 100%; height: auto;" />
+</a>
+</td>
+<td align=3D"center" valign=3D"top" width=3D"14.25" style=3D"width: 14.25px=
+;"></td>
+<td align=3D"center" style=3D"background-color:#060208;">
+<!-- right side image -->
+<a href=3D"https://t.email.redbox.com/r/=3Fid=3Dh74070851,ae524f7,7351994&c=
+id=3Dem:frs:10:29:2021&p1=3Demail_FridaySpotlight_20211029&p2=3DFSL_1029202=
+1_Exclusion&p3=3D26352197788164&p4=3D1946617937" target=3D"_blank" _label=
+=3D"D;R:2,I:2"><img src=3D"https://reels.product.prod.redbox.com/products/r=
+eels/email/content=3Ftype=3DImage&d=3DDesktop&coll_id=3Demail_FridaySpotlig=
+ht_20211029&exclusion=3DFSL_10292021_Exclusion&uid=3D26352197788164&cid=3De=
+m:frs:10:29:2021&et_rid=3D1946617937&items=3D4&rp=3D2&ip=3D2" alt=3D"" widt=
+h=3D"181" height=3D"auto" border=3D"0" style=3D"display: block; width: 100%=
+; max-width: 100%; height: auto;" />
+</a>
+</td>
+<td align=3D"center" valign=3D"top" width=3D"14.25" style=3D"width: 14.25px=
+;">  </td>
+<td align=3D"center" style=3D"background-color:#060208;">
+<!-- right side image -->
+<a href=3D"https://t.email.redbox.com/r/=3Fid=3Dh74070851,ae524f7,7351995&c=
+id=3Dem:frs:10:29:2021&p1=3Demail_FridaySpotlight_20211029&p2=3DFSL_1029202=
+1_Exclusion&p3=3D26352197788164&p4=3D1946617937" target=3D"_blank" _label=
+=3D"D;R:2,I:3"><img src=3D"https://reels.product.prod.redbox.com/products/r=
+eels/email/content=3Ftype=3DImage&d=3DDesktop&coll_id=3Demail_FridaySpotlig=
+ht_20211029&exclusion=3DFSL_10292021_Exclusion&uid=3D26352197788164&cid=3De=
+m:frs:10:29:2021&et_rid=3D1946617937&items=3D4&rp=3D2&ip=3D3" alt=3D"" widt=
+h=3D"181" height=3D"auto" border=3D"0" style=3D"display: block; width: 100%=
+; max-width: 100%; height: auto;" />
+</a>
+</td>
+<td align=3D"center" valign=3D"top" width=3D"14.25" style=3D"width: 14.25px=
+;"></td>
+</tr>
+</tbody>
+</table>
+<!--[if (gte mso 9)|(IE)]>
+</td>
+</tr>
+</table>
+<![endif]-->
+</td>
+</tr>
+<tr>
+<td width=3D"600" bgcolor=3D"#060208" cellspacing=3D"0" cellpadding=3D"0" s=
+tyle=3D"font-size: 0; ">
+<!--[if (gte mso 9)|(IE)]>
+<table align=3D"center" bgcolor=3D"#060208" border=3D"0" cellspacing=3D"0" =
+cellpadding=3D"0" width=3D"600">
+<tr>
+<td align=3D"center" bgcolor=3D"#060208" valign=3D"top" width=3D"600">
+<![endif]-->
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"600" bgcol=
+or=3D"#060208" style=3D"background-color:#060208;max-width: 600px; border-c=
+ollapse:collapse; border-spacing: 0;" align=3D"center">
+<tbody>
+<tr>
+<td align=3D"center" valign=3D"top" width=3D"14.25" style=3D"width: 14.25px=
+;"></td>
+<td align=3D"center" style=3D"background-color:#060208;">
+<!-- left side image -->
+<a href=3D"https://t.email.redbox.com/r/=3Fid=3Dh74070851,ae524f7,7351988&c=
+id=3Dem:frs:10:29:2021&p1=3Demail_FridaySpotlight_20211029&p2=3DFSL_1029202=
+1_Exclusion&p3=3D26352197788164&p4=3D1946617937" target=3D"_blank" _label=
+=3D"D;R:3,I:1"><img src=3D"https://reels.product.prod.redbox.com/products/r=
+eels/email/content=3Ftype=3DImage&d=3DDesktop&coll_id=3Demail_FridaySpotlig=
+ht_20211029&exclusion=3DFSL_10292021_Exclusion&uid=3D26352197788164&cid=3De=
+m:frs:10:29:2021&et_rid=3D1946617937&items=3D4&rp=3D3&ip=3D1" alt=3D"" widt=
+h=3D"181" height=3D"auto"  border=3D"0" style=3D"display: block; width: 100=
+%; max-width: 100%; height: auto;" />
+</a>
+</td>
+<td align=3D"center" valign=3D"top" width=3D"14.25" style=3D"width: 14.25px=
+;"></td>
+<td align=3D"center" style=3D"background-color:#060208;">
+<!-- right side image -->
+<a href=3D"https://t.email.redbox.com/r/=3Fid=3Dh74070851,ae524f7,7351989&c=
+id=3Dem:frs:10:29:2021&p1=3Demail_FridaySpotlight_20211029&p2=3DFSL_1029202=
+1_Exclusion&p3=3D26352197788164&p4=3D1946617937" target=3D"_blank" _label=
+=3D"D;R:3,I:2"><img src=3D"https://reels.product.prod.redbox.com/products/r=
+eels/email/content=3Ftype=3DImage&d=3DDesktop&coll_id=3Demail_FridaySpotlig=
+ht_20211029&exclusion=3DFSL_10292021_Exclusion&uid=3D26352197788164&cid=3De=
+m:frs:10:29:2021&et_rid=3D1946617937&items=3D4&rp=3D3&ip=3D2" alt=3D"" widt=
+h=3D"181" height=3D"auto" border=3D"0" style=3D"display: block; width: 100%=
+; max-width: 100%; height: auto;" />
+</a>
+</td>
+<td align=3D"center" valign=3D"top" width=3D"14.25" style=3D"width: 14.25px=
+;">  </td>
+<td align=3D"center" style=3D"background-color:#060208;">
+<!-- right side image -->
+<a href=3D"https://t.email.redbox.com/r/=3Fid=3Dh74070851,ae524f7,735198a&c=
+id=3Dem:frs:10:29:2021&p1=3Demail_FridaySpotlight_20211029&p2=3DFSL_1029202=
+1_Exclusion&p3=3D26352197788164&p4=3D1946617937" target=3D"_blank" _label=
+=3D"D;R:3,I:3"><img src=3D"https://reels.product.prod.redbox.com/products/r=
+eels/email/content=3Ftype=3DImage&d=3DDesktop&coll_id=3Demail_FridaySpotlig=
+ht_20211029&exclusion=3DFSL_10292021_Exclusion&uid=3D26352197788164&cid=3De=
+m:frs:10:29:2021&et_rid=3D1946617937&items=3D4&rp=3D3&ip=3D3" alt=3D"" widt=
+h=3D"181" height=3D"auto" border=3D"0" style=3D"display: block; width: 100%=
+; max-width: 100%; height: auto;" />
+</a>
+</td>
+<td align=3D"center" valign=3D"top" width=3D"14.25" style=3D"width: 14.25px=
+;"></td>
+</tr>
+</tbody>
+</table>
+<!--[if (gte mso 9)|(IE)]>
+</td>
+</tr>
+</table>
+<![endif]-->
+</td>
+</tr>
+<tr>
+<td bgcolor=3D"#060208" style=3D"background-color: #060208;"><a href=3D"htt=
+ps://t.email.redbox.com/r/=3Fid=3Dh74070851,ae524f7,735197f&cid=3Dem:frs:10=
+:29:2021" target=3D"_blank"><img src=3D"https://res.email.redbox.com/res/re=
+dbox_mkt_prod1/52630a2858a533c7d3487ae1e4a69d49.jpg" alt=3D"STREAM OR RENT =
+NOW" width=3D"600" height=3D"auto" border=3D"0" hspace=3D"0" vspace=3D"0" s=
+tyle=3D"color:#380a46; font-family:Arial, Helvetica, sans-serif; font-size:=
+20px; line-height:24px; display:block; vertical-align:top;"></a>
+</td>
+</tr>
+<tr>
+<td align=3D"center" bgcolor=3D"#060208" style=3D"background-color:#060208;=
+">
+<table class=3D"full-width" align=3D"center" width=3D"600" border=3D"0" cel=
+lpadding=3D"0" cellspacing=3D"0" bgcolor=3D"#060208" style=3D"background-co=
+lor:#060208; width:600px;" >
+<tr>
+<td bgcolor=3D"#060208" align=3D"center" style=3D"font-family:Arial, Helvet=
+ica, sans-serif; color:#ffffff; font-size:25px; line-height: 28px; font-wei=
+ght: bold;" valign=3D"middle"><a href=3D"https://t.email.redbox.com/r/=3Fid=
+=3Dh74070851,ae524f7,7351980&cid=3Dem:frs:10:29:2021" target=3D"_blank" sty=
+le=3D"font-family:Arial, Helvetica, sans-serif; color:#ffffff; font-size:25=
+px; text-decoration: none; line-height: 28px;">MORE NEW RELEASES</a></td>
+</tr>
+<tr align=3D"center">
+<td height=3D"35" bgcolor=3D"#060208"></td>
+</tr>
+</table>
+</td>
+</tr>
+<!--REEL 1-->
+<tr>
+<td width=3D"600" bgcolor=3D"#060208" cellspacing=3D"0" cellpadding=3D"0" s=
+tyle=3D"font-size: 0;padding-bottom: 35px;">
+<!--[if (gte mso 9)|(IE)]>
+<table align=3D"center" bgcolor=3D"#060208" border=3D"0" cellspacing=3D"0" =
+cellpadding=3D"0" width=3D"600">
+<tr>
+<td align=3D"center" bgcolor=3D"#060208" valign=3D"top" width=3D"600">
+<![endif]-->
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"600" bgcol=
+or=3D"#060208" style=3D"background-color:#060208;max-width: 600px; border-c=
+ollapse:collapse; border-spacing: 0;" align=3D"center">
+<tbody>
+<tr>
+<td bgcolor=3D"#060208" align=3D"center" style=3D"padding-left: 14px;">
+<!-- left side image -->
+<a href=3D"https://t.email.redbox.com/r/=3Fid=3Dh74070851,ae524f7,73519a4&c=
+id=3Dem:frs:10:29:2021&p1=3Demail_FridaySpotlight_20211029&p2=3DFSL_1029202=
+1_Exclusion&p3=3D26352197788164&p4=3D1946617937" target=3D"_blank" _label=
+=3D"D;R:4,I:1"><img src=3D"https://reels.product.prod.redbox.com/products/r=
+eels/email/content=3Ftype=3DImage&d=3DDesktop&coll_id=3Demail_FridaySpotlig=
+ht_20211029&exclusion=3DFSL_10292021_Exclusion&uid=3D26352197788164&cid=3De=
+m:frs:10:29:2021&et_rid=3D1946617937&items=3D4&rp=3D4&ip=3D1" alt=3D"" widt=
+h=3D"132.5" height=3D"auto" style=3D"display: block; width: 100%; max-width=
+: 100%; height: auto;" border=3D"0"/>
+</a>
+</td>
+<td align=3D"center" style=3D"padding-left: 14px;padding-right: 7px;">
+<!-- left side image -->
+<a href=3D"https://t.email.redbox.com/r/=3Fid=3Dh74070851,ae524f7,73519a5&c=
+id=3Dem:frs:10:29:2021&p1=3Demail_FridaySpotlight_20211029&p2=3DFSL_1029202=
+1_Exclusion&p3=3D26352197788164&p4=3D1946617937" target=3D"_blank" _label=
+=3D"D;R:4,I:2"><img src=3D"https://reels.product.prod.redbox.com/products/r=
+eels/email/content=3Ftype=3DImage&d=3DDesktop&coll_id=3Demail_FridaySpotlig=
+ht_20211029&exclusion=3DFSL_10292021_Exclusion&uid=3D26352197788164&cid=3De=
+m:frs:10:29:2021&et_rid=3D1946617937&items=3D4&rp=3D4&ip=3D2" alt=3D"" widt=
+h=3D"132.5" height=3D"auto" style=3D"display: block; width: 100%; max-width=
+:100%; height: auto;" border=3D"0"/>
+</a>
+</td>
+<td align=3D"center" style=3D"padding-left: 7px;padding-right: 14px;">
+<!-- right side image -->
+<a href=3D"https://t.email.redbox.com/r/=3Fid=3Dh74070851,ae524f7,73519a6&c=
+id=3Dem:frs:10:29:2021&p1=3Demail_FridaySpotlight_20211029&p2=3DFSL_1029202=
+1_Exclusion&p3=3D26352197788164&p4=3D1946617937" target=3D"_blank" _label=
+=3D"D;R:4,I:3"><img src=3D"https://reels.product.prod.redbox.com/products/r=
+eels/email/content=3Ftype=3DImage&d=3DDesktop&coll_id=3Demail_FridaySpotlig=
+ht_20211029&exclusion=3DFSL_10292021_Exclusion&uid=3D26352197788164&cid=3De=
+m:frs:10:29:2021&et_rid=3D1946617937&items=3D4&rp=3D4&ip=3D3" alt=3D"" widt=
+h=3D"132.5" height=3D"auto" style=3D"display: block; width: 100%; max-width=
+: 100%; height: auto;" border=3D"0" />
+</a>
+</td>
+<td align=3D"center" style=3D"padding-right: 14px;">
+<!-- right side image -->
+<a href=3D"https://t.email.redbox.com/r/=3Fid=3Dh74070851,ae524f7,73519a7&c=
+id=3Dem:frs:10:29:2021&p1=3Demail_FridaySpotlight_20211029&p2=3DFSL_1029202=
+1_Exclusion&p3=3D26352197788164&p4=3D1946617937" target=3D"_blank" _label=
+=3D"D;R:4,I:4"><img src=3D"https://reels.product.prod.redbox.com/products/r=
+eels/email/content=3Ftype=3DImage&d=3DDesktop&coll_id=3Demail_FridaySpotlig=
+ht_20211029&exclusion=3DFSL_10292021_Exclusion&uid=3D26352197788164&cid=3De=
+m:frs:10:29:2021&et_rid=3D1946617937&items=3D4&rp=3D4&ip=3D4" alt=3D"" widt=
+h=3D"132.5" height=3D"auto" style=3D"display: block; width: 100%; max-width=
+: 100%; height: auto;" border=3D"0" />
+</a>
+</td>
+</tr>
+</tbody>
+</table>
+<!--[if (gte mso 9)|(IE)]>
+</td>
+</tr>
+</table>
+<![endif]-->
+</td>
+</tr>
+<tr>
+<td align=3D"center" bgcolor=3D"#060208" style=3D"background-color:#060208;=
+">
+<table class=3D"full-width" align=3D"center" width=3D"600" border=3D"0" cel=
+lpadding=3D"0" cellspacing=3D"0" bgcolor=3D"#060208" style=3D"background-co=
+lor:#060208; width:600px;" >
+<tr>
+<td bgcolor=3D"#060208" align=3D"center" style=3D"font-family:Arial, Helvet=
+ica, sans-serif; color:#ffffff; font-size:25px; line-height: 28px; font-wei=
+ght: bold;" valign=3D"middle"><a href=3D"https://t.email.redbox.com/r/=3Fid=
+=3Dh74070851,ae524f7,73519a8&cid=3Dem:frs:10:29:2021" target=3D"_blank" sty=
+le=3D"font-family:Arial, Helvetica, sans-serif; color:#ffffff; font-size:25=
+px; text-decoration: none; line-height: 28px;">HALLOWEEN FAMILY FAVES</a></=
+td>
+</tr>
+<tr align=3D"center">
+<td height=3D"35" bgcolor=3D"#060208"></td>
+</tr>
+</table>
+</td>
+</tr>
+<!--REEL 2-->
+<tr>
+<td width=3D"600" bgcolor=3D"#060208" cellspacing=3D"0" cellpadding=3D"0" s=
+tyle=3D"font-size: 0;padding-bottom: 35px;">
+<!--[if (gte mso 9)|(IE)]>
+<table align=3D"center" bgcolor=3D"#060208" border=3D"0" cellspacing=3D"0" =
+cellpadding=3D"0" width=3D"600">
+<tr>
+<td align=3D"center" bgcolor=3D"#060208" valign=3D"top" width=3D"600">
+<![endif]-->
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"600" bgcol=
+or=3D"#060208" style=3D"background-color:#060208;max-width: 600px; border-c=
+ollapse:collapse; border-spacing: 0;" align=3D"center">
+<tbody>
+<tr>
+<td bgcolor=3D"#060208" align=3D"center" style=3D"padding-left: 14px;">
+<!-- left side image -->
+<a href=3D"https://t.email.redbox.com/r/=3Fid=3Dh74070851,ae524f7,7351984&c=
+id=3Dem:frs:10:29:2021&p1=3Demail_FridaySpotlight_20211029&p2=3DFSL_1029202=
+1_Exclusion&p3=3D26352197788164&p4=3D1946617937" target=3D"_blank" _label=
+=3D"D;R:5,I:1"><img src=3D"https://reels.product.prod.redbox.com/products/r=
+eels/email/content=3Ftype=3DImage&d=3DDesktop&coll_id=3Demail_FridaySpotlig=
+ht_20211029&exclusion=3DFSL_10292021_Exclusion&uid=3D26352197788164&cid=3De=
+m:frs:10:29:2021&et_rid=3D1946617937&items=3D4&rp=3D5&ip=3D1" alt=3D"" widt=
+h=3D"132.5" height=3D"auto" style=3D"display: block; width: 100%; max-width=
+: 100%; height: auto;" border=3D"0"/>
+</a>
+</td>
+<td align=3D"center" style=3D"padding-left: 14px;padding-right: 7px;">
+<!-- left side image -->
+<a href=3D"https://t.email.redbox.com/r/=3Fid=3Dh74070851,ae524f7,7351985&c=
+id=3Dem:frs:10:29:2021&p1=3Demail_FridaySpotlight_20211029&p2=3DFSL_1029202=
+1_Exclusion&p3=3D26352197788164&p4=3D1946617937" target=3D"_blank" _label=
+=3D"D;R:5,I:2"><img src=3D"https://reels.product.prod.redbox.com/products/r=
+eels/email/content=3Ftype=3DImage&d=3DDesktop&coll_id=3Demail_FridaySpotlig=
+ht_20211029&exclusion=3DFSL_10292021_Exclusion&uid=3D26352197788164&cid=3De=
+m:frs:10:29:2021&et_rid=3D1946617937&items=3D4&rp=3D5&ip=3D2" alt=3D"" widt=
+h=3D"132.5" height=3D"auto" style=3D"display: block; width: 100%; max-width=
+:100%; height: auto;" border=3D"0"/>
+</a>
+</td>
+<td align=3D"center" style=3D"padding-left: 7px;padding-right: 14px;">
+<!-- right side image -->
+<a href=3D"https://t.email.redbox.com/r/=3Fid=3Dh74070851,ae524f7,7351986&c=
+id=3Dem:frs:10:29:2021&p1=3Demail_FridaySpotlight_20211029&p2=3DFSL_1029202=
+1_Exclusion&p3=3D26352197788164&p4=3D1946617937" target=3D"_blank" _label=
+=3D"D;R:5,I:3"><img src=3D"https://reels.product.prod.redbox.com/products/r=
+eels/email/content=3Ftype=3DImage&d=3DDesktop&coll_id=3Demail_FridaySpotlig=
+ht_20211029&exclusion=3DFSL_10292021_Exclusion&uid=3D26352197788164&cid=3De=
+m:frs:10:29:2021&et_rid=3D1946617937&items=3D4&rp=3D5&ip=3D3" alt=3D"" widt=
+h=3D"132.5" height=3D"auto" style=3D"display: block; width: 100%; max-width=
+: 100%; height: auto;" border=3D"0" />
+</a>
+</td>
+<td align=3D"center" style=3D"padding-right: 14px;">
+<!-- right side image -->
+<a href=3D"https://t.email.redbox.com/r/=3Fid=3Dh74070851,ae524f7,7351987&c=
+id=3Dem:frs:10:29:2021&p1=3Demail_FridaySpotlight_20211029&p2=3DFSL_1029202=
+1_Exclusion&p3=3D26352197788164&p4=3D1946617937" target=3D"_blank" _label=
+=3D"D;R:5,I:4"><img src=3D"https://reels.product.prod.redbox.com/products/r=
+eels/email/content=3Ftype=3DImage&d=3DDesktop&coll_id=3Demail_FridaySpotlig=
+ht_20211029&exclusion=3DFSL_10292021_Exclusion&uid=3D26352197788164&cid=3De=
+m:frs:10:29:2021&et_rid=3D1946617937&items=3D4&rp=3D5&ip=3D4" alt=3D"" widt=
+h=3D"132.5" height=3D"auto" style=3D"display: block; width: 100%; max-width=
+: 100%; height: auto;" border=3D"0" />
+</a>
+</td>
+</tr>
+</tbody>
+</table>
+<!--[if (gte mso 9)|(IE)]>
+</td>
+</tr>
+</table>
+<![endif]-->
+</td>
+</tr>
+<tr>
+<td align=3D"center" bgcolor=3D"#060208" style=3D"background-color:#060208;=
+">
+<table class=3D"full-width" align=3D"center" width=3D"600" border=3D"0" cel=
+lpadding=3D"0" cellspacing=3D"0" bgcolor=3D"#060208" style=3D"background-co=
+lor:#060208; width:600px;" >
+<tr>
+<td bgcolor=3D"#060208" align=3D"center" style=3D"font-family:Arial, Helvet=
+ica, sans-serif; color:#ffffff; font-size:25px; line-height: 28px; font-wei=
+ght: bold;" valign=3D"middle"><a href=3D"https://t.email.redbox.com/r/=3Fid=
+=3Dh74070851,ae524f7,7351996&cid=3Dem:frs:10:29:2021" target=3D"_blank" sty=
+le=3D"font-family:Arial, Helvetica, sans-serif; color:#ffffff; font-size:25=
+px; text-decoration: none; line-height: 28px;">RECOMMENDED FOR YOU</a></td>
+</tr>
+<tr align=3D"center">
+<td height=3D"35" bgcolor=3D"#060208"></td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td width=3D"600" bgcolor=3D"#060208" cellspacing=3D"0" cellpadding=3D"0" s=
+tyle=3D"font-size: 0;padding-bottom: 35px;">
+<!--[if (gte mso 9)|(IE)]>
+<table align=3D"center" bgcolor=3D"#060208" border=3D"0" cellspacing=3D"0" =
+cellpadding=3D"0" width=3D"600">
+<tr>
+<td align=3D"center" bgcolor=3D"#060208" valign=3D"top" width=3D"600">
+<![endif]-->
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"600" bgcol=
+or=3D"#060208" style=3D"background-color:#060208;max-width: 600px; border-c=
+ollapse:collapse; border-spacing: 0;" align=3D"center">
+<tbody>
+<tr>
+<td bgcolor=3D"#060208" align=3D"center" style=3D"padding-left: 14px;">
+<!-- left side image -->
+<a href=3D"https://t.email.redbox.com/r/=3Fid=3Dh74070851,ae524f7,7351997&c=
+id=3Dem:frs:10:29:2021&p1=3Demail_FridaySpotlight_20211029&p2=3DFSL_1029202=
+1_Exclusion&p3=3D26352197788164&p4=3D1946617937" target=3D"_blank" _label=
+=3D"D;R:6,I:1"><img src=3D"https://reels.product.prod.redbox.com/products/r=
+eels/email/content=3Ftype=3DImage&d=3DDesktop&coll_id=3Demail_FridaySpotlig=
+ht_20211029&exclusion=3DFSL_10292021_Exclusion&uid=3D26352197788164&cid=3De=
+m:frs:10:29:2021&et_rid=3D1946617937&items=3D4&rp=3D6&ip=3D1" alt=3D"" widt=
+h=3D"132.5" height=3D"auto" style=3D"display: block; width: 100%; max-width=
+: 100%; height: auto;" border=3D"0"/>
+</a>
+</td>
+<td align=3D"center" style=3D"padding-left: 14px;padding-right: 7px;">
+<!-- left side image -->
+<a href=3D"https://t.email.redbox.com/r/=3Fid=3Dh74070851,ae524f7,7351998&c=
+id=3Dem:frs:10:29:2021&p1=3Demail_FridaySpotlight_20211029&p2=3DFSL_1029202=
+1_Exclusion&p3=3D26352197788164&p4=3D1946617937" target=3D"_blank" _label=
+=3D"D;R:6,I:2"><img src=3D"https://reels.product.prod.redbox.com/products/r=
+eels/email/content=3Ftype=3DImage&d=3DDesktop&coll_id=3Demail_FridaySpotlig=
+ht_20211029&exclusion=3DFSL_10292021_Exclusion&uid=3D26352197788164&cid=3De=
+m:frs:10:29:2021&et_rid=3D1946617937&items=3D4&rp=3D6&ip=3D2" alt=3D"" widt=
+h=3D"132.5" height=3D"auto" style=3D"display: block; width: 100%; max-width=
+:100%; height: auto;" border=3D"0"/>
+</a>
+</td>
+<td align=3D"center" style=3D"padding-left: 7px;padding-right: 14px;">
+<!-- right side image -->
+<a href=3D"https://t.email.redbox.com/r/=3Fid=3Dh74070851,ae524f7,7351999&c=
+id=3Dem:frs:10:29:2021&p1=3Demail_FridaySpotlight_20211029&p2=3DFSL_1029202=
+1_Exclusion&p3=3D26352197788164&p4=3D1946617937" target=3D"_blank" _label=
+=3D"D;R:6,I:3"><img src=3D"https://reels.product.prod.redbox.com/products/r=
+eels/email/content=3Ftype=3DImage&d=3DDesktop&coll_id=3Demail_FridaySpotlig=
+ht_20211029&exclusion=3DFSL_10292021_Exclusion&uid=3D26352197788164&cid=3De=
+m:frs:10:29:2021&et_rid=3D1946617937&items=3D4&rp=3D6&ip=3D3" alt=3D"" widt=
+h=3D"132.5" height=3D"auto" style=3D"display: block; width: 100%; max-width=
+: 100%; height: auto;" border=3D"0" />
+</a>
+</td>
+<td align=3D"center" style=3D"padding-right: 14px;">
+<!-- right side image -->
+<a href=3D"https://t.email.redbox.com/r/=3Fid=3Dh74070851,ae524f7,735199a&c=
+id=3Dem:frs:10:29:2021&p1=3Demail_FridaySpotlight_20211029&p2=3DFSL_1029202=
+1_Exclusion&p3=3D26352197788164&p4=3D1946617937" target=3D"_blank" _label=
+=3D"D;R:6,I:4"><img src=3D"https://reels.product.prod.redbox.com/products/r=
+eels/email/content=3Ftype=3DImage&d=3DDesktop&coll_id=3Demail_FridaySpotlig=
+ht_20211029&exclusion=3DFSL_10292021_Exclusion&uid=3D26352197788164&cid=3De=
+m:frs:10:29:2021&et_rid=3D1946617937&items=3D4&rp=3D6&ip=3D4" alt=3D"" widt=
+h=3D"132.5" height=3D"auto" style=3D"display: block; width: 100%; max-width=
+: 100%; height: auto;" border=3D"0" />
+</a>
+</td>
+</tr>
+</tbody>
+</table>
+<!--[if (gte mso 9)|(IE)]>
+</td>
+</tr>
+</table>
+<![endif]-->
+</td>
+</tr>
+<tr>
+<td>
+<table class=3D"full-width" align=3D"center" width=3D"600" border=3D"0" cel=
+lpadding=3D"0" cellspacing=3D"0" bgcolor=3D"#060208" style=3D"background-co=
+lor:#060208; width:600px;">
+<tbody>
+<tr align=3D"center">
+<td height=3D"10" bgcolor=3D"#060208"></td>
+</tr>
+<tr>
+<td align=3D"center" valign=3D"top">
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" >
+<tr>
+<td colspan=3D"2"><a href=3D"https://t.email.redbox.com/r/=3Fid=3Dh74070851=
+,ae524f7,7351990&cid=3Dem:frs:10:29:2021&p1=3Djbyrnescu@yahoo.com&p2=3D1946=
+617937" rel=3D"nofollow"><img src=3D"http://e.redbox.com/imp=3Fs=3D242054&l=
+i=3D&e=3Djbyrnescu@yahoo.com&p=3D1946617937" border=3D"0" width=3D"600" hei=
+ght=3D"auto"/></a></td>
+</tr>
+<tr style=3D"display:block; height:1px; line-height:1px;">
+<td><img src=3D"http://e.redbox.com/imp=3Fs=3D242689&li=3D&e=3Djbyrnescu@ya=
+hoo.com&p=3D1946617937" height=3D"1" width=3D"10" /></td>
+<td><img src=3D"http://e.redbox.com/imp=3Fs=3D242690&li=3D&e=3Djbyrnescu@ya=
+hoo.com&p=3D1946617937" height=3D"1" width=3D"10" /></td>
+</tr>
+<tr>
+<td align=3D"left"><a style=3D"display: block; max-width: 116px; max-height=
+: 1px;" href=3D"https://t.email.redbox.com/r/=3Fid=3Dh74070851,ae524f7,7351=
+991&cid=3Dem:frs:10:29:2021&p1=3Djbyrnescu@yahoo.com&p2=3D1946617937" rel=
+=3D"nofollow"><img src=3D"http://e.redbox.com/imp=3Fs=3D242691&li=3D&e=3Djb=
+yrnescu@yahoo.com&p=3D1946617937" border=3D"0"/></a></td>
+<td align=3D"right"><a style=3D"display: block; max-width: 19px; max-height=
+: 1px;" href=3D"https://t.email.redbox.com/r/=3Fid=3Dh74070851,ae524f7,7351=
+992&cid=3Dem:frs:10:29:2021&p1=3Djbyrnescu@yahoo.com&p2=3D1946617937" rel=
+=3D"nofollow"><img src=3D"http://e.redbox.com/imp=3Fs=3D626318&li=3D&e=3Djb=
+yrnescu@yahoo.com&p=3D1946617937" border=3D"0"/></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr align=3D"center">
+<td height=3D"35" bgcolor=3D"#060208"></td>
+</tr>
+<tr>
+<td bgcolor=3D"#150107" style=3D"background-color: #150107;"><a href=3D"htt=
+ps://t.email.redbox.com/r/=3Fid=3Dh74070851,ae524f7,7351983&cid=3Dem:frs:10=
+:29:2021" target=3D"_blank"><img src=3D"https://res.email.redbox.com/res/im=
+g/E7D5630C99A945C00B7F10CDB2D26A6F.jpg" alt=3D"Headline" width=3D"600" heig=
+ht=3D"auto" border=3D"0" hspace=3D"0" vspace=3D"0" style=3D"color:#380a46; =
+font-family:Arial, Helvetica, sans-serif; font-size:20px; line-height:24px;=
+ display:block; vertical-align:top;"></a>
+</td>
+</tr>
+<tr>
+<td>
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"600" bgcol=
+or=3D"#060208" style=3D"background-color:#060208;max-width: 600px; border-c=
+ollapse:collapse; border-spacing: 0;" align=3D"center">
+<tbody>
+<tr>
+<td align=3D"left" style=3D"padding : 0;background-color:#060208;">
+<!-- right side image -->
+<a href=3D"https://t.email.redbox.com/r/=3Fid=3Dh74070851,ae524f7,73519b2&c=
+id=3Dem:frs:10:29:2021" target=3D"_blank"><img src=3D"https://res.email.red=
+box.com/res/img/31970500132A536427D6B6F191F1B723.jpg" alt=3D"Out Of Death" =
+width=3D"200" height=3D"auto" style=3D"display: block; width: 100%; max-wid=
+th: 100%; height: auto;" border=3D"0" /></a>
+</td>
+<td align=3D"center" style=3D"padding: 0;background-color:#060208;">
+<!-- right side image -->
+<a href=3D"https://t.email.redbox.com/r/=3Fid=3Dh74070851,ae524f7,73519b3&c=
+id=3Dem:frs:10:29:2021" target=3D"_blank"><img src=3D"https://res.email.red=
+box.com/res/img/2A9A6C243F4EED66F1CB72570E9605B7.jpg" alt=3D"Mortal Kombat"=
+ width=3D"200" height=3D"auto" style=3D"display: block; width: 100%; max-wi=
+dth: 100%; height: auto;" border=3D"0" /></a>
+</td>
+<td align=3D"center" style=3D"padding: 0;background-color:#060208;">
+<!-- right side image -->
+<a href=3D"https://t.email.redbox.com/r/=3Fid=3Dh74070851,ae524f7,73519b4&c=
+id=3Dem:frs:10:29:2021" target=3D"_blank"><img src=3D"https://res.email.red=
+box.com/res/img/F9898CA4A397B4ACF36B297F82446F25.jpg" alt=3D"Spiral" width=
+=3D"200" height=3D"auto" style=3D"display: block; width: 100%; max-width: 1=
+00%; height: auto;" border=3D"0" /></a>
+</td>
+</tr>
+
+</tbody>
+</table>
+</td>
+</tr>
+
+
+
+<tr>
+<td bgcolor=3D"#150107" style=3D"background-color: #150107;"><a href=3D"htt=
+ps://t.email.redbox.com/r/=3Fid=3Dh74070851,ae524f7,73519b5&cid=3Dem:frs:10=
+:29:2021&p1=3D26352197788164" target=3D"_blank"><img src=3D"https://res.ema=
+il.redbox.com/res/img/BCBC4AEB9F4E2BDBFFC9D273E12D0A8C.jpg" alt=3D"Headline=
+/Activate Now>" width=3D"600" height=3D"auto" border=3D"0" hspace=3D"0" vsp=
+ace=3D"0" style=3D"color:#380a46; font-family:Arial, Helvetica, sans-serif;=
+ font-size:20px; line-height:24px; display:block; vertical-align:top;"></a>
+</td>
+</tr>
+  
+<tr>
+<td>
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"600" bgcol=
+or=3D"#060208" style=3D"background-color:#060208;max-width: 600px; border-c=
+ollapse:collapse; border-spacing: 0;" align=3D"center">
+<tbody>
+<tr>
+<td align=3D"left" style=3D"padding : 0;background-color:#060208;">
+<!-- right side image -->
+<a href=3D"https://t.email.redbox.com/r/=3Fid=3Dh74070851,ae524f7,73519b7&c=
+id=3Dem:frs:10:29:2021" target=3D"_blank"><img src=3D"https://res.email.red=
+box.com/res/img/22678D08D39E8A9BA8857062980AE45E.jpg" alt=3D"The forever pu=
+rge" width=3D"300" height=3D"auto" style=3D"display: block; width: 100%; ma=
+x-width: 100%; height: auto;" border=3D"0" /></a>
+</td>
+<td align=3D"center" style=3D"padding: 0;background-color:#060208;">
+<!-- right side image -->
+<a href=3D"https://t.email.redbox.com/r/=3Fid=3Dh74070851,ae524f7,73519b8&c=
+id=3Dem:frs:10:29:2021" target=3D"_blank"><img src=3D"https://res.email.red=
+box.com/res/img/C006C4611E1454DB4FA6A131817F23D9.jpg" alt=3D"A quiet place =
+2" width=3D"300" height=3D"auto" style=3D"display: block; width: 100%; max-=
+width: 100%; height: auto;" border=3D"0" /></a>
+</td>
+
+</tr>
+
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"600" bgcol=
+or=3D"#060208" style=3D"background-color:#060208;max-width: 600px; border-c=
+ollapse:collapse; border-spacing: 0;" align=3D"center">
+<tbody>
+<tr>
+<td align=3D"left" style=3D"padding : 0;background-color:#060208;">
+<!-- right side image -->
+<a href=3D"https://t.email.redbox.com/r/=3Fid=3Dh74070851,ae524f7,73519b9&c=
+id=3Dem:frs:10:29:2021" target=3D"_blank"><img src=3D"https://res.email.red=
+box.com/res/img/0A3DA742ED75787855B137E4D8427AFA.jpg" alt=3D"halloween" wid=
+th=3D"300" height=3D"auto" style=3D"display: block; width: 100%; max-width:=
+ 100%; height: auto;" border=3D"0" /></a>
+</td>
+<td align=3D"center" style=3D"padding: 0;background-color:#060208;">
+<!-- right side image -->
+<a href=3D"https://t.email.redbox.com/r/=3Fid=3Dh74070851,ae524f7,73519b0&c=
+id=3Dem:frs:10:29:2021" target=3D"_blank"><img src=3D"https://res.email.red=
+box.com/res/img/6F0CAFCBEDCF77780E32B76B885EBC56.jpg" alt=3D"candyman" widt=
+h=3D"300" height=3D"auto" style=3D"display: block; width: 100%; max-width: =
+100%; height: auto;" border=3D"0" /></a>
+</td>
+
+</tr>
+
+</tbody>
+</table>
+</td>
+</tr>  
+<tr>
+<td bgcolor=3D"#150107" style=3D"background-color: #150107;"><a href=3D"htt=
+ps://t.email.redbox.com/r/=3Fid=3Dh74070851,ae524f7,735198b&cid=3Dem:frs:10=
+:29:2021" target=3D"_blank"><img src=3D"https://res.email.redbox.com/res/re=
+dbox_mkt_prod1/1f7dc40f3a86aeda4f83a73ba68ec778.jpg" alt=3D"Stream Free -  =
+Headline" width=3D"600" height=3D"auto" border=3D"0" hspace=3D"0" vspace=3D=
+"0" style=3D"color:#380a46; font-family:Arial, Helvetica, sans-serif; font-=
+size:20px; line-height:24px; display:block; vertical-align:top;"></a>
+</td>
+</tr>
+<!--REEL 5-->
+<tr>
+<td width=3D"600" bgcolor=3D"#060208" cellspacing=3D"0" cellpadding=3D"0" s=
+tyle=3D"font-size: 0;padding-bottom: 35px;">
+<!--[if (gte mso 9)|(IE)]>
+<table align=3D"center" bgcolor=3D"#060208" border=3D"0" cellspacing=3D"0" =
+cellpadding=3D"0" width=3D"600">
+<tr>
+<td align=3D"center" bgcolor=3D"#060208" valign=3D"top" width=3D"600">
+<![endif]-->
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"600" bgcol=
+or=3D"#060208" style=3D"background-color:#060208;max-width: 600px; border-c=
+ollapse:collapse; border-spacing: 0;" align=3D"center">
+<tbody>
+<tr>
+<td align=3D"center" style=3D"background-color:#060208;padding-left: 14px;p=
+adding-right: 7px;">
+<!-- left side image -->
+<a href=3D"https://t.email.redbox.com/r/=3Fid=3Dh74070851,ae524f7,735198c&c=
+id=3Dem:frs:10:29:2021&p1=3Demail_FridaySpotlight_20211029&p2=3DFSL_1029202=
+1_Exclusion&p3=3D26352197788164&p4=3D1946617937" target=3D"_blank" _label=
+=3D"D;R:7,I:1"><img src=3D"https://reels.product.prod.redbox.com/products/r=
+eels/email/content=3Ftype=3DImage&d=3DDesktop&coll_id=3Demail_FridaySpotlig=
+ht_20211029&exclusion=3DFSL_10292021_Exclusion&uid=3D26352197788164&cid=3De=
+m:frs:10:29:2021&et_rid=3D1946617937&items=3D4&rp=3D7&ip=3D1&wide=3Dtrue" a=
+lt=3D"" width=3D"279" height=3D"auto"  border=3D"0" style=3D"display: block=
+; width: 100%; max-width: 100%; height: auto;" />
+</a>
+</td>
+<td align=3D"center" style=3D"padding-left:7px;padding-right:14px;backgroun=
+d-color:#060208;">
+<!-- right side image -->
+<a href=3D"https://t.email.redbox.com/r/=3Fid=3Dh74070851,ae524f7,735198d&c=
+id=3Dem:frs:10:29:2021&p1=3Demail_FridaySpotlight_20211029&p2=3DFSL_1029202=
+1_Exclusion&p3=3D26352197788164&p4=3D1946617937" target=3D"_blank" _label=
+=3D"D;R:7,I:2"><img src=3D"https://reels.product.prod.redbox.com/products/r=
+eels/email/content=3Ftype=3DImage&d=3DDesktop&coll_id=3Demail_FridaySpotlig=
+ht_20211029&exclusion=3DFSL_10292021_Exclusion&uid=3D26352197788164&cid=3De=
+m:frs:10:29:2021&et_rid=3D1946617937&items=3D4&rp=3D7&ip=3D2&wide=3Dtrue" a=
+lt=3D"" width=3D"279" height=3D"auto" border=3D"0" style=3D"display: block;=
+ width: 100%; max-width: 100%; height: auto;" />
+</a>
+</td>
+</tr>
+<tr>
+<td align=3D"center" style=3D"padding-left: 14px;padding-right: 7px;backgro=
+und-color:#060208;padding-top: 14px;">
+<!-- left side image -->
+<a href=3D"https://t.email.redbox.com/r/=3Fid=3Dh74070851,ae524f7,735198e&c=
+id=3Dem:frs:10:29:2021&p1=3Demail_FridaySpotlight_20211029&p2=3DFSL_1029202=
+1_Exclusion&p3=3D26352197788164&p4=3D1946617937" target=3D"_blank" _label=
+=3D"D;R:7,I:3"><img src=3D"https://reels.product.prod.redbox.com/products/r=
+eels/email/content=3Ftype=3DImage&d=3DDesktop&coll_id=3Demail_FridaySpotlig=
+ht_20211029&exclusion=3DFSL_10292021_Exclusion&uid=3D26352197788164&cid=3De=
+m:frs:10:29:2021&et_rid=3D1946617937&items=3D4&rp=3D7&ip=3D3&wide=3Dtrue" a=
+lt=3D"" width=3D"279" height=3D"auto"  border=3D"0" style=3D"display: block=
+; width: 100%; max-width: 100%; height: auto;" />
+</a>
+</td>
+<td align=3D"center" style=3D"padding-left: 7px;padding-right: 14px;backgro=
+und-color:#060208;padding-top:14px;">
+<!-- right side image -->
+<a href=3D"https://t.email.redbox.com/r/=3Fid=3Dh74070851,ae524f7,735198f&c=
+id=3Dem:frs:10:29:2021&p1=3Demail_FridaySpotlight_20211029&p2=3DFSL_1029202=
+1_Exclusion&p3=3D26352197788164&p4=3D1946617937" target=3D"_blank" _label=
+=3D"D;R:7,I:4"><img src=3D"https://reels.product.prod.redbox.com/products/r=
+eels/email/content=3Ftype=3DImage&d=3DDesktop&coll_id=3Demail_FridaySpotlig=
+ht_20211029&exclusion=3DFSL_10292021_Exclusion&uid=3D26352197788164&cid=3De=
+m:frs:10:29:2021&et_rid=3D1946617937&items=3D4&rp=3D7&ip=3D4&wide=3Dtrue" a=
+lt=3D"" width=3D"279" height=3D"auto"  border=3D"0" style=3D"display: block=
+; width: 100%; max-width: 100%; height: auto;" />
+</a>
+</td>
+</tr>
+</tbody>
+</table>
+<!--[if (gte mso 9)|(IE)]>
+</td>
+</tr>
+</table>
+<![endif]-->
+</td>
+</tr>
+
+
+
+<tr>
+<td>
+<table class=3D"full-width" align=3D"center" width=3D"600" border=3D"0" cel=
+lpadding=3D"0" cellspacing=3D"0" bgcolor=3D"#060208" style=3D"background-co=
+lor:#060208; width:600px;">
+<tr align=3D"center">
+<td height=3D"10" bgcolor=3D"#060208"></td>
+</tr>
+<tr>
+<td align=3D"center" valign=3D"top">
+<table width=3D"600" align=3D"center" bgcolor=3D"#060208" border=3D"0" cell=
+spacing=3D"0" cellpadding=3D"0" style=3D"width: 600px;">
+<tbody>
+<tr>
+<td align=3D"center" valign=3D"top" width=3D"45%">
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" >
+<tr>
+<td colspan=3D"2"><a href=3D"https://t.email.redbox.com/r/=3Fid=3Dh74070851=
+,ae524f7,735199d&cid=3Dem:frs:10:29:2021&p1=3Djbyrnescu@yahoo.com&p2=3D1946=
+617937" rel=3D"nofollow"><img src=3D"http://e.redbox.com/imp=3Fs=3D242052&l=
+i=3D&e=3Djbyrnescu@yahoo.com&p=3D1946617937" border=3D"0" width=3D"250" /><=
+/a></td>
+</tr>
+<tr style=3D"display:block; height:1px; line-height:1px;">
+<td><img src=3D"http://e.redbox.com/imp=3Fs=3D242685&li=3D&e=3Djbyrnescu@ya=
+hoo.com&p=3D1946617937" height=3D"1" width=3D"10" /></td>
+<td><img src=3D"http://e.redbox.com/imp=3Fs=3D242686&li=3D&e=3Djbyrnescu@ya=
+hoo.com&p=3D1946617937" height=3D"1" width=3D"10" /></td>
+</tr>
+<tr>
+<td align=3D"center"><a href=3D"https://t.email.redbox.com/r/=3Fid=3Dh74070=
+851,ae524f7,735199e&cid=3Dem:frs:10:29:2021&p1=3Djbyrnescu@yahoo.com&p2=3D1=
+946617937" rel=3D"nofollow"><img src=3D"http://e.redbox.com/imp=3Fs=3D41836=
+9&li=3D&e=3Djbyrnescu@yahoo.com&p=3D1946617937" border=3D"0"/></a></td>
+<td align=3D"center"><a href=3D"https://t.email.redbox.com/r/=3Fid=3Dh74070=
+851,ae524f7,735199f&cid=3Dem:frs:10:29:2021&p1=3Djbyrnescu@yahoo.com&p2=3D1=
+946617937" rel=3D"nofollow"><img src=3D"http://e.redbox.com/imp=3Fs=3D54943=
+9&li=3D&e=3Djbyrnescu@yahoo.com&p=3D1946617937" border=3D"0"/></a></td>
+</tr>
+</table>
+</td>
+<td align=3D"center" valign=3D"top" width=3D"45%">
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" >
+<tr>
+<td colspan=3D"2"><a href=3D"https://t.email.redbox.com/r/=3Fid=3Dh74070851=
+,ae524f7,73519a0&cid=3Dem:frs:10:29:2021&p1=3Djbyrnescu@yahoo.com&p2=3D1946=
+617937" rel=3D"nofollow"><img src=3D"http://e.redbox.com/imp=3Fs=3D242053&l=
+i=3D&e=3Djbyrnescu@yahoo.com&p=3D1946617937" border=3D"0" width=3D"250" /><=
+/a></td>
+</tr>
+<tr style=3D"display:block; height:1px; line-height:1px;">
+<td><img src=3D"http://e.redbox.com/imp=3Fs=3D242687&li=3D&e=3Djbyrnescu@ya=
+hoo.com&p=3D1946617937" height=3D"1" width=3D"10" /></td>
+<td><img src=3D"http://e.redbox.com/imp=3Fs=3D242688&li=3D&e=3Djbyrnescu@ya=
+hoo.com&p=3D1946617937" height=3D"1" width=3D"10" /></td>
+</tr>
+<tr>
+<td align=3D"left"><a href=3D"https://t.email.redbox.com/r/=3Fid=3Dh7407085=
+1,ae524f7,73519a1&cid=3Dem:frs:10:29:2021&p1=3Djbyrnescu@yahoo.com&p2=3D194=
+6617937" rel=3D"nofollow"><img src=3D"http://e.redbox.com/imp=3Fs=3D418368&=
+li=3D&e=3Djbyrnescu@yahoo.com&p=3D1946617937" border=3D"0"/></a></td>
+<td align=3D"right"><a href=3D"https://t.email.redbox.com/r/=3Fid=3Dh740708=
+51,ae524f7,73519a2&cid=3Dem:frs:10:29:2021&p1=3Djbyrnescu@yahoo.com&p2=3D19=
+46617937" rel=3D"nofollow"><img src=3D"http://e.redbox.com/imp=3Fs=3D549438=
+&li=3D&e=3Djbyrnescu@yahoo.com&p=3D1946617937" border=3D"0"/></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<!-- < Redbox Promotional > -->
+<tr>
+<td align=3D"center" style=3D"font-family:Arial, Helvetica, sans-serif; fon=
+t-size:20px; line-height:24px;background-color:#060208;">
+<table class=3D"full-width" align=3D"center" width=3D"600" border=3D"0" cel=
+lpadding=3D"0" cellspacing=3D"0" bgcolor=3D"#060208" style=3D"background-co=
+lor:#060208; width:600px;">
+<tr align=3D"center">
+<td height=3D"12" bgcolor=3D"#060208"></td>
+</tr>
+<!-- < Redbox Logo > -->
+<tr>
+<td align=3D"center">
+<a href=3D"https://t.email.redbox.com/r/=3Fid=3Dh74070851,ae524f7,73519a3&c=
+id=3Dem:frs:10:29:2021" target=3D"_blank"><img class=3D"mobile-image" alt=
+=3D"Logo" src=3D"https://res.email.redbox.com/res/img/E41C14ED8E1E224ED2DC7=
+DC62190D02B.jpg" width=3D"600" height=3D"auto" border=3D"0" hspace=3D"0" vs=
+pace=3D"0" style=3D"color:#060208; font-family:Arial, Helvetica, sans-serif=
+; font-size:20px; line-height:24px; display:block; vertical-align:top;"/></=
+a>
+</td>
+</tr>
+<!-- </ Redbox Logo > -->
+<!-- < Miscellaneous Signup > -->
+<tr>
+<td width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" style=3D"font-size: =
+0;background-color:#060208; ">
+<!--[if (gte mso 9)|(IE)]>
+<table align=3D"center" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" wi=
+dth=3D"600">
+<tr>
+<td align=3D"center" valign=3D"top" width=3D"600">
+<![endif]-->
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" bgco=
+lor=3D"#380a45" style=3D"background-color:#380a45; max-width: 600px; border=
+-collapse:collapse; border-spacing: 0;">
+<tr>
+<td style=3D"color: #ffffff; font-family: Arial, sans-serif; font-size: 14p=
+x; font-weight: bold; line-height: 100%; mso-line-height-rule: exactly; Mar=
+gin: 0; padding-left:24px;padding-top:25px;padding-bottom: 20px; text-align=
+: center; -webkit-font-smoothing: antialiased;" valign=3D"middle">
+<a href=3D"https://t.email.redbox.com/r/=3Fid=3Dh74070851,ae524f7,73519b1&c=
+id=3Dem:frs:10:29:2021" target=3D"_blank" style=3D"text-decoration: none; c=
+olor: #ffffff;">BUY AT THE KIOSK</a><br>
+<span style=3D"color: #aaaaaa; font-family: Arial, sans-serif; font-size: 1=
+2px; font-weight: bold; line-height: 125%; mso-line-height-rule: exactly; M=
+argin: 0; padding: 0; text-align: center; -webkit-font-smoothing: antialias=
+ed;">used movies for sale</span>
+</td>
+<td style=3D"color: #ffffff; font-family: Arial, sans-serif; font-size: 14p=
+x; font-weight: bold; line-height: 100%; mso-line-height-rule: exactly; Mar=
+gin: 0; padding-left:24px;padding-top:25px;padding-bottom: 20px; text-align=
+: center; -webkit-font-smoothing: antialiased;" valign=3D"middle">
+<a href=3D"https://t.email.redbox.com/r/=3Fid=3Dh74070851,ae524f7,735199b&c=
+id=3Dem:frs:10:29:2021" target=3D"_blank" style=3D"text-decoration: none; c=
+olor: #ffffff;">JOIN TEXT CLUB!<sup style=3D"font-size: 75%; line-height: 0=
+.5; vertical-align: top; mso-text-raise: 35%;">2</sup></a><br>
+<span style=3D"color: #aaaaaa; font-family: Arial, sans-serif; font-size: 1=
+2px; font-weight: bold; line-height: 125%; mso-line-height-rule: exactly; M=
+argin: 0; padding: 0; text-align: center; -webkit-font-smoothing: antialias=
+ed;">text ALERTS to 727272</span>
+</td>
+<td style=3D"color: #ffffff; font-family: Arial, sans-serif; font-size: 14p=
+x; font-weight: bold; line-height: 100%; mso-line-height-rule: exactly; Mar=
+gin: 0; padding-top:25px;padding-bottom: 20px; text-align: center; -webkit-=
+font-smoothing: antialiased;" valign=3D"middle">
+<a href=3D"https://t.email.redbox.com/r/=3Fid=3Dh74070851,ae524f7,735199c&c=
+id=3Dem:frs:10:29:2021" target=3D"_blank" style=3D"text-decoration: none; c=
+olor: #ffffff;">REDBOX UNSCRIPTED</a><br>
+<span style=3D"color: #aaaaaa; font-family: Arial, sans-serif; font-size: 1=
+2px; font-weight: bold; line-height: 125%; mso-line-height-rule: exactly; M=
+argin: 0; padding: 0; text-align: center; -webkit-font-smoothing: antialias=
+ed;">news, insider reviews &amp; more</span>
+</td>
+</tr>
+</table>
+<!--[if (gte mso 9)|(IE)]>
+</td>
+</tr>
+</table>
+<![endif]-->
+</td>
+</tr>
+<!-- </ Miscellaneous Signup > -->
+</table>
+</td>
+</tr>
+<!-- < Redbox Promotional > -->
+<!-- =3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D
+< Footer >
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D -->
+<tr>
+<td align=3D"center" valign=3D"top" bgcolor=3D"#060208">
+<table align=3D"center" width=3D"600" border=3D"0" cellspacing=3D"0" cellpa=
+dding=3D"0" bgcolor=3D"#060208" style=3D"width: 600px;">
+<tbody>
+<tr align=3D"center" style=3D"background-color: #060208;">
+<td height=3D"20" bgcolor=3D"#060208" style=3D"background-color: #060208"><=
+/td>
+</tr>
+<tr align=3D"center" style=3D"background-color: #060208;">
+<td align=3D"center" valign=3D"top" bgcolor=3D"#060208">
+<table width=3D"450" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" style=
+=3D"width: 450px; background-color: #060208; text-align: center; align-item=
+s: center;" align=3D"center" bgcolor=3D"#060208" >
+<tr>
+<td align=3D"center" valign=3D"top">
+<a href=3D"https://t.email.redbox.com/r/=3Fid=3Dh74070851,ae524f7,73519ba&c=
+id=3Dem:frs:10:29:2021" target=3D"_blank"><img src=3D"https://res.email.red=
+box.com/res/img/BA58807B1143581F19F2F59B4CE0EA43.jpg" width=3D"29" height=
+=3D"29" alt=3D"facebook" style=3D"display: block; border: 0;" /></a>
+</td>
+<td align=3D"center" valign=3D"top" width=3D"5">&nbsp;</td>
+<td align=3D"center" valign=3D"top">
+<a href=3D"https://t.email.redbox.com/r/=3Fid=3Dh74070851,ae524f7,73519bb&c=
+id=3Dem:frs:10:29:2021" target=3D"_blank"><img src=3D"https://res.email.red=
+box.com/res/img/1589829E3BDEE833EAFED460A4613DE8.jpg" width=3D"28" height=
+=3D"24" alt=3D"twitter" style=3D"display: block; border: 0;"/></a>
+</td>
+<td align=3D"center" valign=3D"top" width=3D"13">&nbsp;</td>
+<td align=3D"center" valign=3D"top">
+<a href=3D"https://t.email.redbox.com/r/=3Fid=3Dh74070851,ae524f7,73519bc&c=
+id=3Dem:frs:10:29:2021" target=3D"_blank"><img src=3D"https://res.email.red=
+box.com/res/img/00D4BEEF0476A2FD6320CF4B527B7516.jpg" width=3D"29" height=
+=3D"29" alt=3D"instagram" style=3D"display: block; border: 0;"/></a>
+</td>
+<td align=3D"center" valign=3D"top" width=3D"5">&nbsp;</td>
+<td align=3D"center" valign=3D"top">
+<a href=3D"https://t.email.redbox.com/r/=3Fid=3Dh74070851,ae524f7,73519bd&c=
+id=3Dem:frs:10:29:2021" target=3D"_blank"><img src=3D"https://res.email.red=
+box.com/res/img/959419EF02B6CD4509BF410C13384E6C.jpg" width=3D"29" height=
+=3D"29" alt=3D"Pinterest" style=3D"display: block; border: 0;"/></a>
+</td>
+<td align=3D"center" valign=3D"top" width=3D"5">&nbsp;</td>
+<td align=3D"center" valign=3D"top">
+<a href=3D"https://t.email.redbox.com/r/=3Fid=3Dh74070851,ae524f7,73519be&c=
+id=3Dem:frs:10:29:2021" target=3D"_blank"><img src=3D"https://res.email.red=
+box.com/res/img/9DEBDCA43BA07A3440F4073EDE12DA93.jpg" width=3D"28" height=
+=3D"28" alt=3D"SnapChat" style=3D"display: block; border: 0;"/></a>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td align=3D"center" valign=3D"top">
+<table align=3D"center" width=3D"600" border=3D"0" cellspacing=3D"0" cellpa=
+dding=3D"0" bgcolor=3D"#070208" style=3D"width: 600px;">
+<tr align=3D"center">
+<td height=3D"30" bgcolor=3D"#070208"></td>
+</tr>
+<tr>
+<td align=3D"center" dir=3D"ltr" style=3D"font-family:Arial, Helvetica, san=
+s-serif; font-size:14px; font-weight:500; color:#d6d5d7; direction:ltr;" cl=
+ass=3D"stack">HAVE QUESTIONS ABOUT REDBOX=3F&nbsp;<a href=3D"https://t.emai=
+l.redbox.com/r/=3Fid=3Dh74070851,ae524f7,73519bf&cid=3Dem:frs:10:29:2021" t=
+arget=3D"_blank" style=3D"text-decoration:none; color:#e42045;">CONTACT US.=
+</a> </td>
+</tr>
+<tr>
+<td align=3D"left" valign=3D"top" style=3D"font-family:Arial, Helvetica, sa=
+ns-serif; font-size:11px; font-weight:normal; color:#d6d5d7; padding-left:2=
+0px; padding-right:30px; padding-bottom: 20px; padding-top:2px;line-height:=
+ 14px;" class=3D"applelinks"><br>
+
+
+<sup style=3D"font-size: 75%; line-height: 0.5; vertical-align: top; mso-te=
+xt-raise: 35%;">1</sup>Exp. 10&zwnj;/&zwnj;31&zwnj;/&zwnj;21 at 11&zwnj;:&z=
+wnj;59&zwnj;:&zwnj;59pm CT. Valid for stated discount off the fee for a 1 d=
+ay rental of an eligible disc or of an eligible Redbox On Demand rental tra=
+nsaction at $4.99 or more. 1 use, 1 code/per transaction. Your payment card=
+, necessary for a rental, is charged the balance of the daily rental fee fo=
+r a disc and the full daily rental fee for add=E2=80=99l discs + tax (excep=
+t where tax isn=E2=80=99t charged) for the 1st rental day. You=E2=80=99re c=
+harged the full daily rental fee + tax for add=E2=80=99l days you keep each=
+ disc. Can=E2=80=99t be combined with other offers, prior rentals or redeem=
+ed for cash. May be cancelled&zwnj;/&zwnj;changed at any time. Void where p=
+rohibited. <br><br>
+
+*Sale ends 11&zwnj;/&zwnj;1&zwnj;/&zwnj;2021. Plus applicable taxes. Availa=
+ble at select kiosks. Price and selection vary by location.
+<br><br>
+<sup style=3D"font-size: 75%; line-height: 0.5; vertical-align: top; mso-te=
+xt-raise: 35%;">&dagger;</sup>Must activate offer prior to transaction. Req=
+uires active Redbox Perks Account and paid kiosk rental or transaction on R=
+edbox On Demand of eligible titles between 10&zwnj;/&zwnj;15&zwnj;/&zwnj;21=
+ =E2=80=93 11&zwnj;/&zwnj;1&zwnj;/&zwnj;21. Not appl. for purchases at the =
+Kiosk. Offer valid for first rental night. Can=E2=80=99t be combined with o=
+ther offers or prior rentals. Subject to terms at redbox.com/perks/terms<br=
+ /><br />  
+
+The Redbox Perks Program is open to legal residents of the 50 U.S., D.C. or=
+ Puerto Rico, who are 18+. Requires Redbox Account. Void where prohibited b=
+y law. Points for rentals and purchases earned only for paid transactions. =
+Points balance may be delayed up to seven days. Add'l purchase requirements=
+, point limitations/expiration and reward restrictions apply. Subject to Pr=
+ogram Terms &amp; Conditions at <a target=3D"_blank" style=3D"color:#d6d5d7=
+; text-decoration:underline; font-weight:400;" href=3D"https://t.email.redb=
+ox.com/r/=3Fid=3Dh74070851,ae524f7,73519c0&cid=3Dem:frs:10:29:2021">redbox.=
+com/perks/terms</a> and Redbox Platform Terms of Use at <a target=3D"_blank=
+" style=3D"color:#d6d5d7; text-decoration:underline; font-weight:400;" href=
+=3D"https://t.email.redbox.com/r/=3Fid=3Dh74070851,ae524f7,73519c1&cid=3Dem=
+:frs:10:29:2021">redbox.com/termsofuse</a>. Information collected in the pr=
+ogram is subject to the Redbox Privacy policy at <a target=3D"_blank" style=
+=3D"color:#d6d5d7; text-decoration:underline; font-weight:400;" href=3D"htt=
+ps://t.email.redbox.com/r/=3Fid=3Dh74070851,ae524f7,73519c2&cid=3Dem:frs:10=
+:29:2021">redbox.com/privacy</a>.<br/><br/>
+
+<sup style=3D"font-size: 75%; line-height: 0.5; vertical-align: top; mso-te=
+xt-raise: 35%;">2</sup>You will receive recurring messages. Message and dat=
+a rates may apply. Text STOP to cancel, HELP for help. By texting in you ag=
+ree to get texts from Redbox at your mobile number, which may be sent throu=
+gh an automatic telephone dialing system. Consent not required to rent/buy =
+from Redbox. Terms: <a target=3D"_blank" style=3D"color:#d6d5d7; text-decor=
+ation:underline; font-weight:400;" href=3D"https://t.email.redbox.com/r/=3F=
+id=3Dh74070851,ae524f7,73519c3&cid=3Dem:frs:10:29:2021">http://www.redbox.c=
+om/textclub/faq</a>&nbsp;|&nbsp;
+Privacy policy: <a target=3D"_blank" style=3D"color:#d6d5d7; text-decoratio=
+n:underline; font-weight:400;" href=3D"https://t.email.redbox.com/r/=3Fid=
+=3Dh74070851,ae524f7,73519c4&cid=3Dem:frs:10:29:2021">http://www.redbox.com=
+/privacy</a><br><br>
+You have received this email as a registered user of the <a href=3D"https:/=
+/t.email.redbox.com/r/=3Fid=3Dh74070851,ae524f7,73519c5&cid=3Dem:frs:10:29:=
+2021" target=3D"_blank" style=3D"color:#d6d5d7; text-decoration:none;">redb=
+ox.com</a> email list. You are subscribed as <a href=3D"mailto:jbyrnescu@ya=
+hoo.com" target=3D"_blank" style=3D"color:#d6d5d7; text-decoration:none;" t=
+itle=3D"Footer-EmailAddress">jbyrnescu@yahoo.com</a>. If you do not wish to=
+ continue receiving these notices, please <a href=3D"https://t.email.redbox=
+.com/r/=3Fid=3Dh74070851,ae524f7,73519c6&cid=3Dem:frs:10:29:2021&p1=3Djbyrn=
+escu%40yahoo.com" target=3D"_blank" title=3D"optout" _type=3D"optout" style=
+=3D"color:#474747;text-decoration:underline;"><span style=3D"text-decoratio=
+n:underline; color:#d6d5d7;">unsubscribe</span></a>. <br><br>
+Redbox Entertainment Inc.<br> 1 Tower Lane, Suite 800 I Oakbrook Terrace, I=
+L, 60181, USA <br><br>
+&copy; 2021 Redbox Entertainment Inc.
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<!-- =3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D
+</ Footer >
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D -->
+<!--end footer-->
+<tr>
+<td>
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"40" height=
+=3D"6">
+<tbody>
+<tr>
+<td><img src=3D"http://e.redbox.com/imp=3Fs=3D124860200&li=3D&e=3Djbyrnescu=
+@yahoo.com&p=3D1946617937" width=3D"2" height=3D"6" border=3D"0" /></td>
+<td><img src=3D"http://e.redbox.com/imp=3Fs=3D124860201&li=3D&e=3Djbyrnescu=
+@yahoo.com&p=3D1946617937" width=3D"2" height=3D"6" border=3D"0" /></td>
+<td><img src=3D"http://e.redbox.com/imp=3Fs=3D124860202&li=3D&e=3Djbyrnescu=
+@yahoo.com&p=3D1946617937" width=3D"2" height=3D"6" border=3D"0" /></td>
+<td><img src=3D"http://e.redbox.com/imp=3Fs=3D124860203&li=3D&e=3Djbyrnescu=
+@yahoo.com&p=3D1946617937" width=3D"2" height=3D"6" border=3D"0" /></td>
+<td><img src=3D"http://e.redbox.com/imp=3Fs=3D124860204&li=3D&e=3Djbyrnescu=
+@yahoo.com&p=3D1946617937" width=3D"2" height=3D"6" border=3D"0" /></td>
+<td><img src=3D"http://e.redbox.com/imp=3Fs=3D124860205&li=3D&e=3Djbyrnescu=
+@yahoo.com&p=3D1946617937" width=3D"2" height=3D"6" border=3D"0" /></td>
+<td><img src=3D"http://e.redbox.com/imp=3Fs=3D124860206&li=3D&e=3Djbyrnescu=
+@yahoo.com&p=3D1946617937" width=3D"2" height=3D"6" border=3D"0" /></td>
+<td><img src=3D"http://e.redbox.com/imp=3Fs=3D124860207&li=3D&e=3Djbyrnescu=
+@yahoo.com&p=3D1946617937" width=3D"2" height=3D"6" border=3D"0" /></td>
+<td><img src=3D"http://e.redbox.com/imp=3Fs=3D124860208&li=3D&e=3Djbyrnescu=
+@yahoo.com&p=3D1946617937" width=3D"2" height=3D"6" border=3D"0" /></td>
+<td><img src=3D"http://e.redbox.com/imp=3Fs=3D124860209&li=3D&e=3Djbyrnescu=
+@yahoo.com&p=3D1946617937" width=3D"2" height=3D"6" border=3D"0" /></td>
+<td><img src=3D"http://e.redbox.com/imp=3Fs=3D124860210&li=3D&e=3Djbyrnescu=
+@yahoo.com&p=3D1946617937" width=3D"2" height=3D"6" border=3D"0" /></td>
+<td><img src=3D"http://e.redbox.com/imp=3Fs=3D124860211&li=3D&e=3Djbyrnescu=
+@yahoo.com&p=3D1946617937" width=3D"2" height=3D"6" border=3D"0" /></td>
+<td><img src=3D"http://e.redbox.com/imp=3Fs=3D124860212&li=3D&e=3Djbyrnescu=
+@yahoo.com&p=3D1946617937" width=3D"2" height=3D"6" border=3D"0" /></td>
+<td><img src=3D"http://e.redbox.com/imp=3Fs=3D124860213&li=3D&e=3Djbyrnescu=
+@yahoo.com&p=3D1946617937" width=3D"2" height=3D"6" border=3D"0" /></td>
+<td><img src=3D"http://e.redbox.com/imp=3Fs=3D124860214&li=3D&e=3Djbyrnescu=
+@yahoo.com&p=3D1946617937" width=3D"2" height=3D"6" border=3D"0" /></td>
+<td><img src=3D"http://e.redbox.com/imp=3Fs=3D124860215&li=3D&e=3Djbyrnescu=
+@yahoo.com&p=3D1946617937" width=3D"2" height=3D"6" border=3D"0" /></td>
+<td><img src=3D"http://e.redbox.com/imp=3Fs=3D124860216&li=3D&e=3Djbyrnescu=
+@yahoo.com&p=3D1946617937" width=3D"2" height=3D"6" border=3D"0" /></td>
+<td><img src=3D"http://e.redbox.com/imp=3Fs=3D124860217&li=3D&e=3Djbyrnescu=
+@yahoo.com&p=3D1946617937" width=3D"2" height=3D"6" border=3D"0" /></td>
+<td><img src=3D"http://e.redbox.com/imp=3Fs=3D124860218&li=3D&e=3Djbyrnescu=
+@yahoo.com&p=3D1946617937" width=3D"2" height=3D"6" border=3D"0" /></td>
+<td><img src=3D"http://e.redbox.com/imp=3Fs=3D124860219&li=3D&e=3Djbyrnescu=
+@yahoo.com&p=3D1946617937" width=3D"2" height=3D"6" border=3D"0" /></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<!--main table-->
+<img height=3D'0' width=3D'0' alt=3D'' src=3D'https://t.email.redbox.com/r/=
+=3Fid=3Dh74070851,ae524f7,1'/></body>
+</html>
+
+------=_NextPart_922_8CED3F98.8CED3F98--
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>color</key>
+	<string>000000</string>
+	<key>conversation-id</key>
+	<integer>174884</integer>
+	<key>date-last-viewed</key>
+	<integer>1635517616</integer>
+	<key>date-received</key>
+	<integer>1635502614</integer>
+	<key>flags</key>
+	<integer>8623750275</integer>
+	<key>remote-id</key>
+	<string>617939</string>
+</dict>
+</plist>
